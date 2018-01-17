@@ -1,0 +1,16 @@
+{
+    "name": "lotfio-lakehal/ouch",
+    "authors": [
+        {
+            "name": "lotfio-lakehal",
+            "email": "lotfiolakehal@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4":{
+            "Ouch\\":"src/Ouch/"
+        }
+    }
+}

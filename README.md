@@ -1,0 +1,1 @@
+# Ouch error handler for PHP
