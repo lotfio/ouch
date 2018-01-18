@@ -1,16 +1,19 @@
 {
     "name": "lotfio-lakehal/ouch",
+    "description": "Ouch Error handler for PHP",
+    "license": "MIT",
     "authors": [
         {
             "name": "lotfio-lakehal",
             "email": "lotfiolakehal@gmail.com"
         }
     ],
+    
     "require": {},
 
     "autoload": {
         "psr-4":{
-            "Ouch\\":"src/Ouch/"
+            "Ouch\\":"src/ouch/"
         }
     }
 }
