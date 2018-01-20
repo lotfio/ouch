@@ -14,12 +14,13 @@ namespace Ouch\Core;
 
 class View
 {
+    const DS = DIRECTORY_SEPARATOR;
+
     public static function render($file, $ex)
     {
         //TODO create error veiws for booath fatal and exception
         //TODO since boath have diffrent return type
 
-        // test
-        var_dump($ex);
+        require dirname(__DIR__) . self::DS . 'resources' . self::DS . 'views' . self::DS . $file;
     }
 }
