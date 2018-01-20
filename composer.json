@@ -12,6 +12,9 @@
     "require": {},
 
     "autoload": {
+        "files":[
+            "src/ouch/Support/functions.php"
+        ],
         "psr-4":{
             "Ouch\\":"src/ouch/"
         }

@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- spectre -->
-    <link rel="stylesheet" href="../assets/css/spectre-exp.min.css">
-    <link rel="stylesheet" href="../assets/css/spectre-icons.min.css">
-    <link rel="stylesheet" href="../assets/css/spectre.min.css">
+    <style>
+        <?php include css('spectre-exp.min.css')?>
+        <?php include css('spectre-icons.min.css')?>
+        <?php include css('spectre.min.css')?>
+        <?php include css('custom.css')?>
+    </style>
 
     <title>Hello, world!</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
 
-</body>
+
+
+
+<script>
+    <?php include js('custom.js')?>
+</script>
 </html>
