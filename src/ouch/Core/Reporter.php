@@ -12,7 +12,7 @@
 
 namespace Ouch\Core;
 
-class Recorder
+class Reporter
 {
     /**
      * @var HandlersSetter
@@ -39,7 +39,7 @@ class Recorder
      * @param string $status
      * @param string $level
      */
-    public function register($status = "on", $level = "E_ALL")
+    public function report($status = "on", $level = "E_ALL")
     {
         //TODO trigger error handlers from here based on the config abouve
 
