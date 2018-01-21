@@ -34,12 +34,12 @@ class Reporter
     }
 
     /**
-     * register error handler
+     * register error handlers
      *
      * @param string $status
      * @param string $level
      */
-    public function report($status = "on", $level = "E_ALL")
+    public function run($status = "on", $level = "E_ALL")
     {
         //TODO trigger error handlers from here based on the config abouve
 
@@ -49,9 +49,24 @@ class Reporter
             $this->handler->setExceptionHandler();
             $this->handler->setFatalErrorHandler();
         }
-
-
     }
+
+    /**
+     * get back error handler
+     */
+    public function restoreErrorHandler()
+    {
+        $this->handler->restoreErrorHandler();
+    }
+
+    /**
+     * get back Exception handler
+     */
+    public function restoreExceptionHandler()
+    {
+        $this->handler->restoreExceptionHandler();
+    }
+
 
 
 }

@@ -51,4 +51,20 @@ class HandlersSetter
     {
         register_shutdown_function([$this->handlers, "fatalErrorHandler"]);
     }
+
+    /**
+     * restore error handler
+     */
+    public function restoreErrorHandler()
+    {
+        restore_error_handler();
+    }
+
+    /**
+     * restore exception handler
+     */
+    public function restoreExceptionHandler()
+    {
+        restore_exception_handler();
+    }
 }
