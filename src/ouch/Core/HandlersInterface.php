@@ -17,6 +17,11 @@ interface HandlersInterface
     /**
      * error handler callback method
      * will be passed to set_error_handler
+     *
+     * @param int $type
+     * @param string $msg
+     * @param string $file
+     * @param int $line
      * @return mixed
      */
     public function errorHandler(int $type, string $msg, string $file, int $line);
