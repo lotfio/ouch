@@ -13,10 +13,10 @@
 
     "autoload": {
         "files":[
-            "src/ouch/Support/functions.php"
+            "src/Ouch/Support/functions.php"
         ],
         "psr-4":{
-            "Ouch\\":"src/ouch/"
+            "Ouch\\":"src/Ouch/"
         }
     }
 }

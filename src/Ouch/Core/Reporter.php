@@ -67,6 +67,4 @@ class Reporter
         $this->handler->restoreExceptionHandler();
     }
 
-
-
 }
