@@ -29,8 +29,8 @@ class Reporter
      */
     public function __construct()
     {
+        ini_set("error_reporting", 0);
         $this->handler = new HandlersSetter(new Handlers());
-        $this->errorReporting = (int) ini_get("error_reporting");
     }
 
     /**
@@ -39,16 +39,23 @@ class Reporter
      * @param string $status
      * @param string $level
      */
-    public function run($status = "on", $level = "E_ALL")
+    public function enable()
     {
         //TODO trigger error handlers from here based on the config abouve
+        $this->handler->setErrorHandler();
+        $this->handler->setExceptionHandler();
+        $this->handler->setFatalErrorHandler();
+        return $this;
+    }
 
-        if($this->errorReporting !== 0 && $status == "on" )
-        {
-            $this->handler->setErrorHandler();
-            $this->handler->setExceptionHandler();
-            $this->handler->setFatalErrorHandler();
-        }
+    /**
+     * restore default error handlers
+     * @return void
+     */
+    public function disable()
+    {
+        $this->restoreErrorHandler();
+        $this->restoreExceptionHandler();
     }
 
     /**
@@ -57,6 +64,7 @@ class Reporter
     public function restoreErrorHandler()
     {
         $this->handler->restoreErrorHandler();
+        return $this;
     }
 
     /**
@@ -65,6 +73,7 @@ class Reporter
     public function restoreExceptionHandler()
     {
         $this->handler->restoreExceptionHandler();
+        return $this;
     }
 
 }
