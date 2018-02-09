@@ -4,7 +4,7 @@ body{
 
 .error-section{
     background: #e7edf3;
-    color: #ff1c00;
+    color: /*#ff1c00;*/ /*rgb(239, 86, 79);*/rgb(231, 102, 47);
     padding: 20px;
     min-height: 160px;
 }
