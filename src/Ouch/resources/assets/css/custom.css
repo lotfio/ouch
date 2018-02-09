@@ -1,0 +1,10 @@
+body{
+    background: #fff;
+}
+
+.error-section{
+    background: #e7edf3;
+    color: #ff1c00;
+    padding: 20px;
+    min-height: 160px;
+}
