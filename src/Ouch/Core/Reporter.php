@@ -20,11 +20,6 @@ class Reporter
     public $handler;
 
     /**
-     * @var string
-     */
-    public $errorReporting;
-
-    /**
      * Recorder constructor.
      */
     public function __construct()
@@ -54,26 +49,8 @@ class Reporter
      */
     public function disable()
     {
-        $this->restoreErrorHandler();
-        $this->restoreExceptionHandler();
-    }
-
-    /**
-     * get back error handler
-     */
-    public function restoreErrorHandler()
-    {
         $this->handler->restoreErrorHandler();
-        return $this;
-    }
-
-    /**
-     * get back Exception handler
-     */
-    public function restoreExceptionHandler()
-    {
         $this->handler->restoreExceptionHandler();
-        return $this;
     }
 
 }
