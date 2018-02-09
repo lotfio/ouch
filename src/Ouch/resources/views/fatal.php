@@ -26,7 +26,7 @@
     <section class="error-section">
         <div class="container grid-lg">
             <?php
-                echo "<h3>CompileErrorException : </h3> <br>";
+                echo "<h3>Fatal Error : </h3> <br>";
 
                 print_r($ex['message']);
                 //print_r($ex['file']);
@@ -57,8 +57,9 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
-
+<script>
+    <?php include assets('js/prism.min.js')?>
+    <?php include assets('js/custom.js')?>
+</script>
 </body>
 </html>
