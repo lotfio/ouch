@@ -49,30 +49,18 @@ if( !function_exists('assets'))
     }
 }
 
-if( !function_exists('css'))
+if( !function_exists('lastWord'))
 {
-
     /**
-     * css function
-     * @param null $file
-     * @return string
-     */
-    function css($file = null)
+     * last word in string
+     *
+     * @param string $string
+     * @param string $delimiter
+     * @return void
+     */   
+    function lastWord($string, $delimiter = "/")
     {
-        return assets('css') . ds() . $file;
-    }
-}
-
-if( !function_exists('js'))
-{
-
-    /**
-     * javascript function
-     * @param null $file
-     * @return string
-     */
-    function js($file = null)
-    {
-        return assets('js') . ds() . $file;
+        $str = explode($delimiter, $string);
+        return $str[count($str) -1];
     }
 }
