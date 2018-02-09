@@ -19,8 +19,10 @@ class HandlersSetter
      */
     private $handlers;
 
+
     /**
-     * HandlersSetter constructor.
+     * HandlersSetter constructor
+     *
      * @param HandlersInterface $handlers
      */
     public function __construct(HandlersInterface $handlers)
@@ -29,7 +31,9 @@ class HandlersSetter
     }
 
     /**
-     * error handler
+     * set error Handler
+     *
+     * @return void
      */
     public function setErrorHandler()
     {
@@ -37,7 +41,9 @@ class HandlersSetter
     }
 
     /**
-     * exceptions handler
+     * set exception handler
+     *
+     * @return void
      */
     public function setExceptionHandler()
     {
@@ -45,7 +51,9 @@ class HandlersSetter
     }
 
     /**
-     * fatal error handler
+     * set fatal error handler
+     *
+     * @return void
      */
     public function setFatalErrorHandler()
     {
@@ -54,6 +62,8 @@ class HandlersSetter
 
     /**
      * restore error handler
+     *
+     * @return void
      */
     public function restoreErrorHandler()
     {
@@ -62,6 +72,8 @@ class HandlersSetter
 
     /**
      * restore exception handler
+     *
+     * @return void
      */
     public function restoreExceptionHandler()
     {
