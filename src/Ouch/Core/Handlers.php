@@ -33,7 +33,7 @@ class Handlers implements HandlersInterface
      */
     public function errorHandler(int $type, string $message, string $file, int $line)
     {
-        $errors = $this->setErrors($type, $message, $file, $line);
+        $errors = (object) $this->setErrors($type, $message, $file, $line);
 
         //TODO render template on error
        http_response_code(500);
@@ -47,7 +47,7 @@ class Handlers implements HandlersInterface
      */
     public function exceptionHandler($e)
     {   
-        $errors = $this->setErrors(
+        $errors = (object) $this->setErrors(
             $e->getCode(),
             $e->getMessage(),
             $e->getFile(),

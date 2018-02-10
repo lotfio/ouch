@@ -14,7 +14,7 @@
         <?php include assets('css/custom.css')?>
     </style>
 
-    <title>500 | Fatal Error</title>
+    <title>Ouch | <?=$ex->type?>r</title>
 </head>
 <body>
 
