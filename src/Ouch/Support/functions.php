@@ -49,18 +49,17 @@ if( !function_exists('assets'))
     }
 }
 
-if( !function_exists('lastWord'))
+if(! function_exists('renderView'))
 {
     /**
-     * last word in string
-     *
-     * @param string $string
-     * @param string $delimiter
-     * @return void
-     */   
-    function lastWord($string, $delimiter = "/")
+     * render view function
+     * 
+     * @param  string $file   error template file
+     * @param  array  $errors errors
+     * @return          
+     */
+    function renderView($file, $errors)
     {
-        $str = explode($delimiter, $string);
-        return $str[count($str) -1];
+        return Ouch\Core\View::render($file, $errors);
     }
 }

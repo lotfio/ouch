@@ -25,13 +25,8 @@
 
     <section class="error-section">
         <div class="container grid-lg">
-            <?php
-                echo "<h3>CompileErrorException : </h3> <br>";
 
-                print_r($ex['message']);
-                //print_r($ex['file']);
-                //print_r($ex['line']);
-            ?>
+            <?php print_r($ex) ?>
         </div>
     </section>
 
