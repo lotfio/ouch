@@ -22,5 +22,6 @@ class View
         //TODO since boath have diffrent return type
 
         require dirname(__DIR__) . self::DS . 'resources' . self::DS . 'views' . self::DS . $file;
+        exit(0); // stop execution on first error
     }
 }
