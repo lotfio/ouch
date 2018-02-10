@@ -36,6 +36,7 @@ class Handlers implements HandlersInterface
         $errors = $this->setErrors($type, $message, $file, $line);
 
         //TODO render template on error
+       http_response_code(500);
        return renderView('500.php', $errors);
     }
 
@@ -55,6 +56,7 @@ class Handlers implements HandlersInterface
         );
 
         //TODO render template on exception error
+        http_response_code(500);
         return renderView('500.php', $errors);
     }
 
