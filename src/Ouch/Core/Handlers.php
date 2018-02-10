@@ -12,8 +12,6 @@
 
 namespace Ouch\Core;
 
-use Ouch\Exceptions;
-
 class Handlers implements HandlersInterface
 {
 
@@ -23,7 +21,6 @@ class Handlers implements HandlersInterface
      * @var array
      */
     private $errors = array();
-
 
     /**
      * custom error handler 
@@ -36,10 +33,10 @@ class Handlers implements HandlersInterface
      */
     public function errorHandler(int $type, string $message, string $file, int $line)
     {
-        $this->setErrors($type, $message, $file, $line);
+        $errors = $this->setErrors($type, $message, $file, $line);
 
         //TODO render template on error
-        print_r($this->errors);
+       return renderView('500.php', $errors);
     }
 
     /**
@@ -49,7 +46,7 @@ class Handlers implements HandlersInterface
      */
     public function exceptionHandler($e)
     {   
-        $this->setErrors(
+        $errors = $this->setErrors(
             $e->getCode(),
             $e->getMessage(),
             $e->getFile(),
@@ -58,7 +55,7 @@ class Handlers implements HandlersInterface
         );
 
         //TODO render template on exception error
-        print_r($this->errors);
+        return renderView('500.php', $errors);
     }
 
     /**
@@ -69,11 +66,9 @@ class Handlers implements HandlersInterface
      * @param string $file    error file
      * @param int    $line    error line
      */
-    public function setErrors(int $type, string $message,  string $file, int $line, array $trace) : array
+    public function setErrors(int $type, string $message,  string $file, int $line, array $trace = array()) : array
     {   
-
        return $this->errors = array(
-
             "type"    => $this->whichError($type),
             "message" => $message,
             "file"    => $file,
@@ -84,9 +79,10 @@ class Handlers implements HandlersInterface
 
 
     /**
-     * [whichError description]
-     * @param  int    $type [description]
-     * @return [type]       [description]
+     * return errors based on there type
+     * 
+     * @param  int    $type error type
+     * @return string
      */
     public function whichError(int $type)
     {
