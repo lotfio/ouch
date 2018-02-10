@@ -63,3 +63,34 @@ if(! function_exists('renderView'))
         return Ouch\Core\View::render($file, $errors);
     }
 }
+
+if(!function_exists('readErrorFile'))
+{
+    function readErrorFile($file, $line)
+    {
+        $file = new SplFileObject($file);
+
+        $start = 1;
+    
+        if($line >= 10) // if file is more than 10 lines
+        {
+            $start = $line - 5;
+    
+            $file->seek($start);
+        }
+    
+        while (!$file->eof()) {
+    
+            if($start >= $line + 6) break; // end reading
+            
+            if($start == 1){ $start +=1; echo "&lt;?php\n";}
+
+            echo $start . " - " . htmlspecialchars(trim($file->fgets(), '<?php'), ENT_QUOTES, 'UTF-8');
+
+            $start++;
+        }
+    
+    
+        $file = null;
+    }
+}
