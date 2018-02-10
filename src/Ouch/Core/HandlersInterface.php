@@ -34,11 +34,4 @@ interface HandlersInterface
      * @return mixed
      */
     public function exceptionHandler($exception);
-
-    /**
-     * fatal error handler callback methos
-     * will be passed to register_shutdown_function
-     * @return mixed
-     */
-    public function fatalErrorHandler();
 }

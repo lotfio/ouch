@@ -39,7 +39,6 @@ class Reporter
         //TODO trigger error handlers from here based on the config abouve
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
-        $this->handler->setFatalErrorHandler();
         return $this;
     }
 
