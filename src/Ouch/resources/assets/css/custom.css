@@ -1,10 +1,22 @@
 body{
     background: #fff;
 }
+header{
+    border-top: 5px solid #e85600;
+}
 
 .error-section{
     background: #e7edf3;
-    color: /*#ff1c00;*/ /*rgb(239, 86, 79);*/rgb(231, 102, 47);
+    color: #e85600;
     padding: 20px;
     min-height: 160px;
+    padding: 20px;
+}
+.srv-info{
+    background: #eee;
+    margin: 8px 10px;
+    padding: 20px;
+    border-radius: .2rem;
+    overflow: scroll;
+    max-height: 60%;
 }
