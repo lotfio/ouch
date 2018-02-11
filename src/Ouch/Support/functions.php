@@ -64,32 +64,39 @@ if(! function_exists('renderView'))
     }
 }
 
+
 if(!function_exists('readErrorFile'))
 {
+    /**
+     * read error file function
+     *
+     * @param string $file error file
+     * @param int    $line error line
+     * @return void
+     */
     function readErrorFile($file, $line)
     {
         $file = new SplFileObject($file);
+        $file->fseek(1); // remove < to disable php from execution
 
         $start = 1;
-    
-        if($line >= 10) // if file is more than 10 lines
-        {
-            $start = $line - 5;
-    
-            $file->seek($start);
-        }
-    
-        while (!$file->eof()) {
-    
-            if($start >= $line + 6) break; // end reading
-            
-            if($start == 1){ $start +=1; echo "&lt;?php\n";}
 
-            echo $start . " - " . htmlspecialchars(trim($file->fgets(), '<?php'), ENT_QUOTES, 'UTF-8');
+        if($line >= 10){ $start = $line - 7; $file->seek($start);} // if long file seek 7 lines before error 
+
+        while (!$file->eof()) {
+
+            if($start >= $line + 5) break; // break if long file
+
+            // remove php tag and add &lt;
+            if($start == 1) { echo $start ." - &lt;" . $file->fgets(); $start++; continue;}
+
+            // if line > 10 jump two steps to slove seek problem else count normally
+            if($line >= 10){ echo $start + 2 . ' - ' . $file->fgets();} else{
+                echo $start  . ' - ' . $file->fgets();
+            }
 
             $start++;
         }
-    
     
         $file = null;
     }
