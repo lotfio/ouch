@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="https://www.sans.org/sites/default/files/ouch.png" type="image/x-icon">
     <!-- spectre -->
     <style>
-        <?php include assets('css/spectre.min.css')?>
-        <?php include assets('css/prism.min.css')?>
-        <?php include assets('css/custom.css')?>
+        <?php include ouch_assets('css/spectre.min.css')?>
+        <?php include ouch_assets('css/prism.min.css')?>
+        <?php include ouch_assets('css/custom.css')?>
     </style>
 
     <title>Ouch | <?=$ex->type?></title>
@@ -21,32 +21,40 @@
         <!--<h2>Nav here</h2>-->
     </div>
 
-    <section class="error-section">
-        <div class="container grid-lg">
-            <h3><?=$ex->type?></h3>
-            <?= $ex->message . ' on line: '.$ex->line?>
+    <section class="text-center error-section">
+        <div class="container">
+            <h1><?=$ex->type?></h1>
+            <h5><?= $ex->message . ' in line: <span class="error-line">'.$ex->line . '</span>' ?></h5>
         </div>
     </section>
 
 </header>
 
 <section class="">
-    <div class="container grid-lg">
+    <div class="container grid-xl">
         <div class="columns">
 
-            <div class="col-4">
-                <div class="srv-info">
-                <?php 
-                        foreach($_SERVER as $key => $val) :
-                        echo "<p>" . $key . " : " . $val . "</p>";
-                        endforeach;
-                    ?>
+            <div class="column">
+
+                <div class="text-editor">
+                    <h5>Line <?=$ex->line?> in file <?=$ex->file?> : </h5>
+                    <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="server-info">
+                  <h5>Server info: </h5>
+                  <?php
+                    foreach($_SERVER as $key => $val)
+                    {
+                        echo "<div><b>" . $key . "</b> : " . $val . "</div>";
+                    }
+                  ?>
                 </div>
             </div>
 
-            <div class="col-8">
-                <pre><code class="language-php"><?=readErrorFile($ex->file, $ex->line)?></code></pre>
-            </div>
         </div>
     </div>
 </section>
@@ -54,8 +62,8 @@
 
 
 <script>
-    <?php include assets('js/prism.min.js')?>
-    <?php include assets('js/custom.js')?>
+    <?php include ouch_assets('js/prism.min.js')?>
+    <?php include ouch_assets('js/custom.js')?>
 </script>
 </body>
 </html>
