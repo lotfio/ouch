@@ -12,6 +12,8 @@
 
 namespace Ouch\Core;
 
+use Ouch\Exceptions;
+
 class Handlers implements HandlersInterface
 {
 
@@ -20,95 +22,117 @@ class Handlers implements HandlersInterface
      * 
      * @var array
      */
-    private $errors = array();
+    private $errors =  array();
 
     /**
      * custom error handler 
      * 
-     * @param  int    $type [description]
-     * @param  string $msg  [description]
-     * @param  string $file [description]
-     * @param  int    $line [description]
-     * @return [type]       [description]
+     * @param  int    $type error type
+     * @param  string $msg  error message
+     * @param  string $file error file
+     * @param  int    $line error line
+     * @return void throw Exception
      */
     public function errorHandler(int $type, string $message, string $file, int $line)
     {
-        $errors = (object) $this->setErrors(
-            $this->whichError($type), 
-            $message, 
-            $file, 
-            $line);
-
-        //TODO render template on error
-       http_response_code(500);
-       return renderView('500.php', $errors);
+        $this->whichError($message, $type, $file, $line);
     }
 
     /**
-     * exceptions handler
+     * exception handler
      *
-     * @param $exception
+     * @param object $e exception object
+     * @return void throw exception based on the error type
      */
     public function exceptionHandler($e)
     {   
-        $errors = (object) $this->setErrors(
-            $this->whichError($e->getCode()) . ' Exception ',
+        $this->setError(
+            $e->getCode(),
             $e->getMessage(),
             $e->getFile(),
             $e->getLine(),
+            get_class($e),
             $e->getTrace()
         );
 
         //TODO render template on exception error
         http_response_code(500);
-        return renderView('500.php', $errors);
+        return renderView('500.php', (object) $this->errors);
     }
 
     /**
-     * Errors seter method
+     * error handler method
+     *
+     * @return void
+     */
+    public function fatalHandler()
+    {
+        $errors = error_get_last();
+        if(is_array($errors))
+        {
+            $this->setError(
+                $errors['type'],
+                $errors['message'],
+                $errors['file'],
+                $errors['line'],
+                "FatalErrorException"
+            );
+
+            //TODO render template on exception error
+            http_response_code(500);
+            return renderView('500.php', (object) $this->errors);
+        }
+    }
+
+    /**
+     * register error on errors array
      * 
      * @param int    $type    error type
      * @param string $message error message
      * @param string $file    error file
      * @param int    $line    error line
      */
-    public function setErrors(string $type, string $message,  string $file, int $line, array $trace = array()) : array
+    public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array()) : array
     {   
        return $this->errors = array(
             "type"    => $type,
             "message" => $message,
             "file"    => $file,
             "line"    => $line,
+            "class"   => $class,
             "trace"   => $trace
         );
     }
 
 
     /**
-     * return errors based on there type
-     * 
-     * @param  int    $type error type
-     * @return string
+     * determine error type and throw exception
+     *
+     * @param string $message error message
+     * @param integer $type error type
+     * @param string  $file error file
+     * @param integer $line error line
+     * @return void
      */
-    public function whichError(int $type)
+    public function whichError(string $message, int $type, string $file, int $line)
     {
         switch ($type) {
-            case E_ERROR            : return "Error";              break;
-            case E_WARNING          : return "Warning";            break;
-            case E_PARSE            : return "Parce Error";        break;
-            case E_NOTICE           : return "Notice";             break;
-            case E_CORE_ERROR       : return "Core Error";         break;
-            case E_CORE_WARNING     : return "Core warning";       break;
-            case E_COMPILE_ERROR    : return "Compile Error";      break;
-            case E_COMPILE_WARNING  : return "Compile warning";    break;
-            case E_USER_ERROR       : return "User Error";         break;
-            case E_USER_WARNING     : return "User Warning";       break;
-            case E_USER_NOTICE      : return "User notice";        break;
-            case E_STRICT           : return "Strict";             break;
-            case E_RECOVERABLE_ERROR: return "Recoverable Error";  break;
-            case E_DEPRECATED       : return "Depricated";         break;
-            case E_USER_DEPRECATED  : return "User Depricated";    break;
-            default                 : return "Error";              break;
+            case E_ERROR            : throw new Exceptions\ErrorException($message, $type, $type, $file, $line);
+            case E_WARNING          : throw new Exceptions\WarningException($message, $type, $type, $file, $line);
+            case E_PARSE            : throw new Exceptions\ParseErrorException($message, $type, $type, $file, $line);
+            case E_NOTICE           : throw new Exceptions\NoticeException($message, $type, $type, $file, $line);
+            case E_CORE_ERROR       : throw new Exceptions\CoreErrorException($message, $type, $type, $file, $line);
+            case E_CORE_WARNING     : throw new Exceptions\CoreWarningException($message, $type, $type, $file, $line);
+            case E_COMPILE_ERROR    : throw new Exceptions\CompileErrorException($message, $type, $type, $file, $line);
+            case E_COMPILE_WARNING  : throw new Exceptions\CompileWarningException($message, $type, $type, $file, $line);
+            case E_USER_ERROR       : throw new Exceptions\UserErrorException($message, $type, $type, $file, $line);
+            case E_USER_WARNING     : throw new Exceptions\UserWarningException($message, $type, $type, $file, $line);
+            case E_USER_NOTICE      : throw new Exceptions\UserNoticeException($message, $type, $type, $file, $line);
+            case E_STRICT           : throw new Exceptions\StrictErrorException($message, $type, $type, $file, $line);
+            case E_RECOVERABLE_ERROR: throw new Exceptions\RecoverableErrorException($message, $type, $type, $file, $line);
+            case E_DEPRECATED       : throw new Exceptions\DepricatedException($message, $type, $type, $file, $line);
+            case E_USER_DEPRECATED  : throw new Exceptions\UserDepricatedException($message, $type, $type, $file, $line);
+            default                 : throw new Exceptions\ErrorException($message, $type, $type, $file, $line);
         }
     }
 

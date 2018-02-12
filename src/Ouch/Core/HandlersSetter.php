@@ -51,6 +51,15 @@ class HandlersSetter
     }
 
     /**
+     * set falat handler 
+     *
+     * @return void
+     */
+    public function setFatalHandler()
+    {
+        register_shutdown_function([$this->handlers, "fatalHandler"]);
+    }
+    /**
      * restore error handler
      *
      * @return void

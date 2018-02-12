@@ -12,7 +12,7 @@
         <?php include ouch_assets('css/custom.css')?>
     </style>
 
-    <title>Ouch | <?=$ex->type?></title>
+    <title>Ouch | <?=$ex->class?></title>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
     <section class="text-center error-section">
         <div class="container">
-            <h1><?=$ex->type?></h1>
+            <h1><?=$ex->class?></h1>
             <h5><?= $ex->message . ' in line: <span class="error-line">'.$ex->line . '</span>' ?></h5>
         </div>
     </section>
@@ -39,6 +39,8 @@
                 <div class="text-editor">
                     <h5>Line <?=$ex->line?> in file <?=$ex->file?> : </h5>
                     <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
+                    
+                    <?php  if(isset($ex->trace[0])) print_r($ex->trace[0])  ?>
                 </div>
 
             </div>
