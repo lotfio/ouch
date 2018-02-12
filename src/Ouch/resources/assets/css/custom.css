@@ -1,5 +1,5 @@
 body{
-    background: #fff;
+    background: #eee;
 }
 
 /* prism custom style */
@@ -15,7 +15,7 @@ pre[class*=language-]  span:first-child
 /* page style */
 .error-section{
     padding: 30px 0px;
-    background: #f5f5f5;
+    background: #fff;
     margin: 15px 0;
 }
 
@@ -23,7 +23,7 @@ pre[class*=language-]  span:first-child
     padding: 10px;
     margin: 10px;
     border-radius: .03rem;
-    background: #f5f5f5;
+    background: #fff;
     height: 560px;
     overflow: scroll;
 }
@@ -36,11 +36,14 @@ pre[class*=language-]  span:first-child
 }
 .text-editor h5{
     margin-bottom: 15px;
-    color: #bfbfbf;
+    color: #e4e4e4;
 }
 .error-line{
     background: #ea2760;
     color: #fff;
     display: inline-block;
     padding: 0px 20px;
+}
+.text-center{
+    text-align: center;
 }
