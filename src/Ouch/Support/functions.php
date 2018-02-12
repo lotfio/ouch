@@ -36,14 +36,14 @@ if( !function_exists('root'))
     }
 }
 
-if( !function_exists('assets'))
+if( !function_exists('ouch_assets'))
 {
     /**
      * assets() function path
      * @param null $file
      * @return string
      */
-    function assets($file = null)
+    function ouch_assets($file = null)
     {
         return root() . 'resources'. ds() .'assets' . ds() . $file;
     }
@@ -88,20 +88,18 @@ if(!function_exists('readErrorFile'))
             if($start >= $line + 5) break; // break if long file
 
             // remove php tag and add &lt;
-            if($start == 1) { echo $start ." - &lt;" . $file->fgets(); $start++; continue;}
+            if($start == 1) { echo "&lt;" . $file->fgets(); $start++; continue;}
 
 
             // if line > 10 jump two steps to slove seek problem else count normally
             if($line >= 10){ 
     
-               if($start == $line - 2) echo "-> "; // add a pinter to error line
-
                 echo $start + 2 . ' - ' . $file->fgets();
                  
             } else{
                 
                 echo $start  . ' - ' . $file->fgets();
-                if($start == $line) echo " => ";
+
             }
 
             $start++;
