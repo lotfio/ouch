@@ -90,9 +90,18 @@ if(!function_exists('readErrorFile'))
             // remove php tag and add &lt;
             if($start == 1) { echo $start ." - &lt;" . $file->fgets(); $start++; continue;}
 
+
             // if line > 10 jump two steps to slove seek problem else count normally
-            if($line >= 10){ echo $start + 2 . ' - ' . $file->fgets();} else{
+            if($line >= 10){ 
+    
+               if($start == $line - 2) echo "-> "; // add a pinter to error line
+
+                echo $start + 2 . ' - ' . $file->fgets();
+                 
+            } else{
+                
                 echo $start  . ' - ' . $file->fgets();
+                if($start == $line) echo " => ";
             }
 
             $start++;
