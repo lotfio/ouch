@@ -23,14 +23,14 @@ if( !function_exists('ds'))
     }
 }
 
-if( !function_exists('root'))
+if( !function_exists('ouch_root'))
 {
 
     /**
      * root() directory function
      * @return string root dir path
      */
-    function root()
+    function ouch_root()
     {
         return dirname(__DIR__) . ds();
     }
@@ -45,7 +45,7 @@ if( !function_exists('ouch_assets'))
      */
     function ouch_assets($file = null)
     {
-        return root() . 'resources'. ds() .'assets' . ds() . $file;
+        return ouch_root() . 'resources'. ds() .'assets' . ds() . $file;
     }
 }
 
