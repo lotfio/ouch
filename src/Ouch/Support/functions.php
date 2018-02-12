@@ -64,6 +64,22 @@ if(! function_exists('renderView'))
     }
 }
 
+if(! function_exists('str_last'))
+{
+    /**
+     * get last word from a string
+     *
+     * @param string $str string
+     * @param string $del delimiter
+     * @return void
+     */
+    function str_last($str, $del = "\\")
+    {
+        $str = explode($del, $str);
+        return $str[count($str) - 1];
+    }
+}
+
 
 if(!function_exists('readErrorFile'))
 {
