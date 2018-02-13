@@ -51,9 +51,15 @@
 
                     <!-- debugging helpers -->
                     <div class="help-links">
-                        <a href="#"><span class="icon icon-stack"></span></a>
-                        <a href="#"><span class="icon icon-reddit"></span></a>
-                        <a href="#"><span class="icon icon-google"></span></a>
+                        <a href="https://stackoverflow.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in stackoverflow">
+                            <span class="icon icon-stack"></span>
+                        </a>
+                        <a href="https://www.reddit.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in reddit">
+                            <span class="icon icon-reddit"></span>
+                        </a>
+                        <a href="https://www.google.dz/search?q=PHP <?=$ex->message?>" target="_blank" title="open in google">
+                            <span class="icon icon-google"></span>
+                        </a>
                     </div>
 
                     <div class="clear-fix"></div>

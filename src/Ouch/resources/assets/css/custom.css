@@ -54,9 +54,17 @@ pre[class*=language-]  span:first-child
     float: right;
     margin-top: 15px;
 }
-.help-links a {
+.help-links a { 
     display: inline-block;
-    padding: 5px 5px;
+    padding: 18px 18px;
     color: #fff;
     border-radius: 50%;
+    box-shadow: 0px 0px 5px #000;
+    position: relative;
+    margin-left: 3px;
+}
+.help-links a:nth-child(2) span
+{
+    left: 8px;
+    top: 9px;
 }
