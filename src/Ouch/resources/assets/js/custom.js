@@ -3,7 +3,7 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
 	'remove-indent': true,
 	'left-trim': true,
 	'right-trim': true,
-	'break-lines': 100,
+	'break-lines': 120,
 	'indent': 0,
 	'remove-initial-line-feed': true,
 	'tabs-to-spaces': 4,
