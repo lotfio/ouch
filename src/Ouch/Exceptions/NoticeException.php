@@ -12,7 +12,7 @@
 
 namespace Ouch\Exceptions;
 
-class NoticeErrorException extends ErrorException
+class NoticeException extends ErrorException
 {
     
 }
