@@ -69,22 +69,82 @@
 
             <div class="col-md-4"> <!-- additional debug information -->
                 <div class="server-info">
-                <?php  if(isset($ex->trace[0])) print_r($ex->trace[0])  ?>
-                  <h5>Server info: </h5>
-                  <?php
-                    foreach($_SERVER as $key => $val)
-                    {
-                        echo "<div><b>" . $key . "</b> : " . $val . "</div>";
-                    }
-                  ?>
+                    <!-- debug menues item -->
+                    <ul class="menu">
+                        <!-- menu item -->
+                        <li class="menu-item">
+                            <div class="menu-badge">
+                                <i class="icon icon-up menu-icon"></i>
+                            </div>
+                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Server Info </a>
+                        </li>
+                    </ul>
+
+                    <div class="menu-info">
+                        <ul>
+                            <?php foreach($_SERVER as $key => $vl)
+                            {
+                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
+                            } ?>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4"> <!-- additional debug information -->
+                <div class="server-info">
+                    <!-- debug menues item -->
+                    <ul class="menu">
+                        <!-- menu item -->
+                        <li class="menu-item">
+                            <div class="menu-badge">
+                                <i class="icon icon-up menu-icon"></i>
+                            </div>
+                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Request Data </a>
+                        </li>
+                    </ul>
+
+                    <div class="menu-info">
+                        <ul>
+                            <?php foreach($_REQUEST as $key => $vl)
+                            {
+                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
+                            } ?>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4"> <!-- additional debug information -->
+                <div class="server-info">
+                    <!-- debug menues item -->
+                    <ul class="menu">
+                        <!-- menu item -->
+                        <li class="menu-item">
+                            <div class="menu-badge">
+                                <i class="icon icon-up menu-icon"></i>
+                            </div>
+                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Env </a>
+                        </li>
+                    </ul>
+
+                    <div class="menu-info">
+                        <ul>
+                            <?php foreach($_ENV as $key => $vl)
+                            {
+                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
+                            } ?>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
-
 
 <script>
     <?php include ouch_assets('js/prism.min.js')?>

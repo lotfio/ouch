@@ -19,16 +19,13 @@ pre[class*=language-]  span:first-child
 .error-section{
     padding: 30px 0px;
     background: #fff;
-    margin: 15px 0;
+    margin: 10px 0 0 0;
+    box-shadow: 0 0.05rem 0.2rem rgba(69,77,93,.3);
 }
 
 .server-info{
-    padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
     border-radius: .03rem;
-    background: #fff;
-    height: 560px;
-    overflow: scroll;
 }
 
 .text-editor{
@@ -67,4 +64,22 @@ pre[class*=language-]  span:first-child
 {
     left: 8px;
     top: 9px;
+}
+
+/* error debug menu*/
+.menu-icon{
+    position: static;
+}
+.menu-info{
+    margin-top: 0;
+    padding: 0;
+    background: #fff;
+    height: 0;
+    overflow: hidden;
+}
+.active-info-menu{
+    height: 100%;
+    margin-top: 10px;
+    padding: .4rem;
+    overflow: auto;
 }

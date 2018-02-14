@@ -32,3 +32,11 @@ font-style : normal;
     font-family: FontAwesome;
     content: "\f1a0";
 }
+.icon-up:before {
+    font-family: FontAwesome;
+    content: "\f077";
+}
+.icon-down:before {
+    font-family: FontAwesome;
+    content: "\f078";
+}
