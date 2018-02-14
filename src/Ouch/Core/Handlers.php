@@ -47,11 +47,11 @@ class Handlers implements HandlersInterface
     public function exceptionHandler($e)
     {   
         $this->setError(
-            $e->getCode(),
-            $e->getMessage(),
-            $e->getFile(),
-            $e->getLine(),
-            get_class($e),
+            (int)    $e->getCode(),
+            (string) $e->getMessage(),
+            (string) $e->getFile(),
+            (int)    $e->getLine(),
+            (string) get_class($e),
             $e->getTrace()
         );
 
@@ -71,10 +71,10 @@ class Handlers implements HandlersInterface
         if(is_array($errors))
         {
             $this->setError(
-                $errors['type'],
-                $errors['message'],
-                $errors['file'],
-                $errors['line'],
+               (int)     $errors['type'],
+                (string) $errors['message'],
+                (string) $errors['file'],
+                (int)    $errors['line'],
                 "FatalErrorException"
             );
 
