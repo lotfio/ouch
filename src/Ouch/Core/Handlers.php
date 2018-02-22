@@ -25,13 +25,25 @@ class Handlers implements HandlersInterface
     private $errors =  array();
 
     /**
-     * custom error handler 
-     * 
-     * @param  int    $type error type
-     * @param  string $msg  error message
-     * @param  string $file error file
-     * @param  int    $line error line
-     * @return void throw Exception
+     * @param int $type
+     * @param string $message
+     * @param string $file
+     * @param int $line
+     * @return mixed|void
+     * @throws Exceptions\CompileErrorException
+     * @throws Exceptions\CompileWarningException
+     * @throws Exceptions\CoreErrorException
+     * @throws Exceptions\CoreWarningException
+     * @throws Exceptions\DepricatedException
+     * @throws Exceptions\ErrorException
+     * @throws Exceptions\NoticeException
+     * @throws Exceptions\ParseErrorException
+     * @throws Exceptions\RecoverableErrorException
+     * @throws Exceptions\UserDepricatedException
+     * @throws Exceptions\UserErrorException
+     * @throws Exceptions\UserNoticeException
+     * @throws Exceptions\UserWarningException
+     * @throws Exceptions\WarningException
      */
     public function errorHandler(int $type, string $message, string $file, int $line)
     {
@@ -85,12 +97,13 @@ class Handlers implements HandlersInterface
     }
 
     /**
-     * register error on errors array
-     * 
-     * @param int    $type    error type
-     * @param string $message error message
-     * @param string $file    error file
-     * @param int    $line    error line
+     * @param int $type
+     * @param string $message
+     * @param string $file
+     * @param int $line
+     * @param string $class
+     * @param array $trace
+     * @return array
      */
     public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array()) : array
     {   
@@ -106,13 +119,24 @@ class Handlers implements HandlersInterface
 
 
     /**
-     * determine error type and throw exception
-     *
-     * @param string $message error message
-     * @param integer $type error type
-     * @param string  $file error file
-     * @param integer $line error line
-     * @return void
+     * @param string $message
+     * @param int $type
+     * @param string $file
+     * @param int $line
+     * @throws Exceptions\CompileErrorException
+     * @throws Exceptions\CompileWarningException
+     * @throws Exceptions\CoreErrorException
+     * @throws Exceptions\CoreWarningException
+     * @throws Exceptions\DepricatedException
+     * @throws Exceptions\ErrorException
+     * @throws Exceptions\NoticeException
+     * @throws Exceptions\ParseErrorException
+     * @throws Exceptions\RecoverableErrorException
+     * @throws Exceptions\UserDepricatedException
+     * @throws Exceptions\UserErrorException
+     * @throws Exceptions\UserNoticeException
+     * @throws Exceptions\UserWarningException
+     * @throws Exceptions\WarningException
      */
     public function whichError(string $message, int $type, string $file, int $line)
     {
