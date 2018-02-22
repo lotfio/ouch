@@ -15,6 +15,7 @@ if( !function_exists('ds'))
 
     /**
      * ds() directory separator function
+     *
      * @return string directory separator
      */
     function ds()
@@ -28,6 +29,7 @@ if( !function_exists('ouch_root'))
 
     /**
      * root() directory function
+     *
      * @return string root dir path
      */
     function ouch_root()
@@ -40,6 +42,7 @@ if( !function_exists('ouch_assets'))
 {
     /**
      * assets() function path
+     *
      * @param null $file
      * @return string
      */
@@ -53,10 +56,10 @@ if(! function_exists('renderView'))
 {
     /**
      * render view function
-     * 
-     * @param  string $file   error template file
-     * @param  array  $errors errors
-     * @return          
+     *
+     * @param $file
+     * @param $errors
+     * @return bool
      */
     function renderView($file, $errors)
     {

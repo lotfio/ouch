@@ -18,10 +18,8 @@ class View
 
     public static function render($file, $ex)
     {
-        //TODO create error veiws for booath fatal and exception
-        //TODO since boath have diffrent return type
-
+        //TODO fix paths
         require dirname(__DIR__) . self::DS . 'resources' . self::DS . 'views' . self::DS . $file;
-        exit(0); // stop execution on first error
+        return false; //stop execution on first error
     }
 }

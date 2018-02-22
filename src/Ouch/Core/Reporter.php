@@ -29,14 +29,12 @@ class Reporter
     }
 
     /**
-     * register error handlers
+     * enable ouch error handler
      *
-     * @param string $status
-     * @param string $level
+     * @return $this
      */
     public function enable()
     {
-        //TODO trigger error handlers from here based on the config abouve
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
         $this->handler->setFatalHandler();
@@ -44,7 +42,9 @@ class Reporter
     }
 
     /**
-     * restore default error handlers
+     * disable ouch error handler
+     * and restore default error handler
+     *
      * @return void
      */
     public function disable()
