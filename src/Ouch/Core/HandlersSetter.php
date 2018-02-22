@@ -37,7 +37,7 @@ class HandlersSetter
      */
     public function setErrorHandler()
     {
-        return set_error_handler([$this->handlers, "errorHandler"]);
+        set_error_handler([$this->handlers, "errorHandler"]);
     }
 
     /**
@@ -47,7 +47,7 @@ class HandlersSetter
      */
     public function setExceptionHandler()
     {
-        return set_exception_handler([$this->handlers, "exceptionHandler"]);
+        set_exception_handler([$this->handlers, "exceptionHandler"]);
     }
 
     /**
