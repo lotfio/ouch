@@ -110,10 +110,9 @@
                            <?php
 
                            if($ex->trace){
-                               print_r($ex->trace);
-                               exit;
+
+                               print_r($ex->trace[0]);
                            }
-                            echo "<h5>No Exception trace found !</h5>"
                            ?>
                         </ul>
                     </div>
