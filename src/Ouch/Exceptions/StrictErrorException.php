@@ -12,7 +12,7 @@
 
 namespace Ouch\Exceptions;
 
-class StrictErrorErrorException extends ErrorException
+class StrictErrorException extends ErrorException
 {
     
 }
