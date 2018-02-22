@@ -127,3 +127,25 @@ if(!function_exists('readErrorFile'))
         $file = null;
     }
 }
+
+if (!function_exists('getallheaders'))
+{
+    /**
+     * get all headers function
+     * generally this function exisits in apache so it will be used only in ngnx
+     *
+     * @return array
+     */
+    function getallheaders()
+    {
+        $headers = [];
+        foreach ($_SERVER as $name => $value)
+        {
+            if (substr($name, 0, 5) == 'HTTP_')
+            {
+                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+            }
+        }
+        return $headers;
+    }
+}
