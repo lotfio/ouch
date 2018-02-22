@@ -25,7 +25,7 @@
         
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-sm-12">
-                    <img src="https://www.sans.org/sites/default/files/ouch.png" alt="logo" class="text-center">
+                    <img src="https://user-images.githubusercontent.com/18489496/36539671-dbf89a76-17d7-11e8-99e1-b372935b83c4.png" alt="logo" class="text-center">
                 </div>
 
                 <div class="col-xl-9 col-lg-9 col-sm-12">
@@ -101,16 +101,20 @@
                             <div class="menu-badge">
                                 <i class="icon icon-up menu-icon"></i>
                             </div>
-                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Request Data </a>
+                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Exception Trace </a>
                         </li>
                     </ul>
 
                     <div class="menu-info">
                         <ul>
-                            <?php foreach($_REQUEST as $key => $vl)
-                            {
-                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
-                            } ?>
+                           <?php
+
+                           if($ex->trace){
+                               print_r($ex->trace);
+                               exit;
+                           }
+                            echo "<h5>No Exception trace found !</h5>"
+                           ?>
                         </ul>
                     </div>
                     
@@ -126,13 +130,13 @@
                             <div class="menu-badge">
                                 <i class="icon icon-up menu-icon"></i>
                             </div>
-                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Env </a>
+                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Request Header </a>
                         </li>
                     </ul>
 
                     <div class="menu-info">
                         <ul>
-                            <?php foreach($_ENV as $key => $vl)
+                            <?php foreach(getallheaders() as $key => $vl)
                             {
                                 echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
                             } ?>
