@@ -1,0 +1,42 @@
+@font-face {
+font-family: "FontAwesome";
+font-weight: normal;
+font-style : normal;
+        src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+        src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+.icon {
+    position: absolute;
+    top: 11px;
+    display: inline-block;
+    font: normal normal 16px/1 'FontAwesome';
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 4px;
+    left: 10px;
+}
+  /* Add icons you will be using below */
+.icon-stack:before {
+    font-family: FontAwesome;
+    content: "\f16c";
+}
+.icon-reddit:before {
+    font-family: FontAwesome;
+    content: "\f1a1";
+}
+.icon-google:before {
+    font-family: FontAwesome;
+    content: "\f1a0";
+}
+.icon-up:before {
+    font-family: FontAwesome;
+    content: "\f077";
+}
+.icon-down:before {
+    font-family: FontAwesome;
+    content: "\f078";
+}
