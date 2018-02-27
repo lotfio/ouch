@@ -24,3 +24,24 @@
 - Follow PSR coding style guidelines
 
 # Instalation & Use :
+
+
+
+
+
+
+## Contributing
+
+Thank you for considering to contribute to Ouch. All the contribution guidelines are mentioned [here](CONTRIBUTING.md).
+
+## Support the development
+
+**Do you like this project? Support it by:**
+
+- Donate   : paypal.
+- Share it : facebook, twitter, on your website.
+- 
+
+## License
+
+Ouch is an open-source software licensed under the [MIT license](LICENSE.md).
