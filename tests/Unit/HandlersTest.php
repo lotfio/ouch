@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use Ouch\Exceptions;
-use Ouch\Exceptions\UserNoticeException;
 use PHPUnit\Framework\TestCase;
 use Ouch\Core\Handlers;
 

@@ -39,7 +39,7 @@ class Handlers implements HandlersInterface
      * @throws Exceptions\NoticeException
      * @throws Exceptions\ParseErrorException
      * @throws Exceptions\RecoverableErrorException
-     * @throws Exceptions\UserDepricatedException
+     * @throws Exceptions\UserDeprecatedException
      * @throws Exceptions\UserErrorException
      * @throws Exceptions\UserNoticeException
      * @throws Exceptions\UserWarningException
