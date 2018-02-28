@@ -67,7 +67,7 @@
 
             </div>
 
-            <div class="col-md-4"> <!-- additional debug information -->
+            <div class="col-md-6"> <!-- additional debug information -->
                 <div class="server-info">
                     <!-- debug menues item -->
                     <ul class="menu">
@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4"> <!-- additional debug information -->
+            <div class="col-md-6"> <!-- additional debug information -->
                 <div class="server-info">
                     <!-- debug menues item -->
                     <ul class="menu">
@@ -111,34 +111,9 @@
 
                            if($ex->trace){
 
-                               print_r($ex->trace[0]);
+                               print_r($ex->trace);
                            }
                            ?>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="col-md-4"> <!-- additional debug information -->
-                <div class="server-info">
-                    <!-- debug menues item -->
-                    <ul class="menu">
-                        <!-- menu item -->
-                        <li class="menu-item">
-                            <div class="menu-badge">
-                                <i class="icon icon-up menu-icon"></i>
-                            </div>
-                            <a href="#" draggable="false"> <i class="icon icon-link"></i> Request Header </a>
-                        </li>
-                    </ul>
-
-                    <div class="menu-info">
-                        <ul>
-                            <?php foreach(getallheaders() as $key => $vl)
-                            {
-                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
-                            } ?>
                         </ul>
                     </div>
                     

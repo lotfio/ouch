@@ -14,12 +14,16 @@ namespace Ouch\Core;
 
 class View
 {
-    const DS = DIRECTORY_SEPARATOR;
-
-    public static function render($file, $ex)
+    /**
+     * render view method
+     * 
+     * @param  string $file view file name
+     * @param  object $ex   exception
+     * @return   void
+     */
+    public static function render($file, $ex) : void
     {
-        //TODO fix paths
-        require dirname(__DIR__) . self::DS . 'resources' . self::DS . 'views' . self::DS . $file;
-        return false; //stop execution on first error
+        require $file;
+        exit(1); //stop execution on first error
     }
 }

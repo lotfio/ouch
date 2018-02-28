@@ -52,6 +52,20 @@ if( !function_exists('ouch_assets'))
     }
 }
 
+if( !function_exists('ouch_views'))
+{
+    /**
+     * views() function path
+     *
+     * @param null $file
+     * @return string
+     */
+    function ouch_views($file = null)
+    {
+        return ouch_root() . 'resources'. ds() .'views' . ds() . $file;
+    }
+}
+
 if(! function_exists('renderView'))
 {
     /**
@@ -63,7 +77,7 @@ if(! function_exists('renderView'))
      */
     function renderView($file, $errors)
     {
-        return Ouch\Core\View::render($file, $errors);
+        return Ouch\Core\View::render(ouch_views($file), $errors);
     }
 }
 
@@ -125,27 +139,5 @@ if(!function_exists('readErrorFile'))
         }
     
         $file = null;
-    }
-}
-
-if (!function_exists('getallheaders'))
-{
-    /**
-     * get all headers function
-     * generally this function exisits in apache so it will be used only in ngnx
-     *
-     * @return array
-     */
-    function getallheaders()
-    {
-        $headers = [];
-        foreach ($_SERVER as $name => $value)
-        {
-            if (substr($name, 0, 5) == 'HTTP_')
-            {
-                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
-            }
-        }
-        return $headers;
     }
 }
