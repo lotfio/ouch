@@ -12,7 +12,7 @@
 
 namespace Ouch\Exceptions;
 
-class UserDepricatedException extends ErrorException
+class UserDeprecatedException extends ErrorException
 {
-    
+
 }

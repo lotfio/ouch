@@ -56,7 +56,7 @@ class Handlers implements HandlersInterface
      * @param object $e exception object
      * @return void throw exception based on the error type
      */
-    public function exceptionHandler($e)
+    public function exceptionHandler($e) : void
     {   
         $this->setError(
             (int)    $e->getCode(),
@@ -69,7 +69,8 @@ class Handlers implements HandlersInterface
 
         //TODO render template on exception error
         http_response_code(500);
-        return renderView('500.php', (object) $this->errors);
+        renderView('500.php', (object) $this->errors);
+        return;
     }
 
     /**
@@ -77,7 +78,7 @@ class Handlers implements HandlersInterface
      *
      * @return void
      */
-    public function fatalHandler()
+    public function fatalHandler() : void
     {
         $errors = error_get_last();
         if(is_array($errors))
@@ -92,7 +93,8 @@ class Handlers implements HandlersInterface
 
             //TODO render template on exception error
             http_response_code(500);
-            return renderView('500.php', (object) $this->errors);
+            renderView('500.php', (object) $this->errors);
+            return;
         }
     }
 
@@ -132,7 +134,7 @@ class Handlers implements HandlersInterface
      * @throws Exceptions\NoticeException
      * @throws Exceptions\ParseErrorException
      * @throws Exceptions\RecoverableErrorException
-     * @throws Exceptions\UserDepricatedException
+     * @throws Exceptions\UserDeprecatedException
      * @throws Exceptions\UserErrorException
      * @throws Exceptions\UserNoticeException
      * @throws Exceptions\UserWarningException
@@ -155,7 +157,7 @@ class Handlers implements HandlersInterface
             case E_STRICT           : throw new Exceptions\StrictErrorException($message, $type, $type, $file, $line);
             case E_RECOVERABLE_ERROR: throw new Exceptions\RecoverableErrorException($message, $type, $type, $file, $line);
             case E_DEPRECATED       : throw new Exceptions\DepricatedException($message, $type, $type, $file, $line);
-            case E_USER_DEPRECATED  : throw new Exceptions\UserDepricatedException($message, $type, $type, $file, $line);
+            case E_USER_DEPRECATED  : throw new Exceptions\UserDeprecatedException($message, $type, $type, $file, $line);
             default                 : throw new Exceptions\ErrorException($message, $type, $type, $file, $line);
         }
     }
