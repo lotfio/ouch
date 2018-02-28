@@ -14,8 +14,7 @@
 ![build](https://img.shields.io/badge/build-passing-8e44ad.svg)
 
 ## How it looks like :
-![2018-02-22-14-44-timino io](https://user-images.githubusercontent.com/18489496/36541678-f7fa9740-17de-11e8-9d12-52186a8a812d.png)
-
+![2018-02-28-19-13-timino io](https://user-images.githubusercontent.com/18489496/36804680-973f3e4c-1cbb-11e8-9d27-f6e7d09a3993.png)
 ## Features :
 - Simple and easy to use
 - Catch all Errors and Exceptions
@@ -38,7 +37,7 @@
 
 ## Contributing
 
-Thank you for considering to contribute to Ouch. All the contribution guidelines are mentioned [here](CONTRIBUTING.md).
+Thank you for considering to contribute to Ouch. All the contribution guidelines are mentioned [here](CONTRIBUTE.md).
 
 ## Support the development
 
