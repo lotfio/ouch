@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Ouch error handler for PHP
@@ -24,7 +24,7 @@ class Reporter
      */
     public function __construct()
     {
-        ini_set("error_reporting", 0);
+        ini_set("error_reporting", 'true');
         $this->handler = new HandlersSetter(new Handlers());
     }
 
