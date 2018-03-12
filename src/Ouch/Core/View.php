@@ -21,7 +21,7 @@ class View
      * @param  object $ex   exception
      * @return   void
      */
-    public static function render($file, $ex) : void
+    public static function render($file, $ex)
     {
         require $file;
         exit(1); //stop execution on first error

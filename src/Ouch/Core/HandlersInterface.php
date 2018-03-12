@@ -24,7 +24,7 @@ interface HandlersInterface
      * @param int $line
      * @return mixed
      */
-    public function errorHandler(int $type, string $msg, string $file, int $line);
+    public function errorHandler($type, $msg, $file, $line);
 
     /**
      * exception handler callback method
