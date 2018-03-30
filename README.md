@@ -25,7 +25,7 @@
 
 # Instalation & Use :
 ```
-    composer require lotfio-lakehal/ouch dev-develop //this is develop branch stable release will be available soon
+    composer require lotfio-lakehal/ouch
 ```
 
 ### Use it:
@@ -39,6 +39,10 @@
 
 Thank you for considering to contribute to Ouch. All the contribution guidelines are mentioned [here](CONTRIBUTE.md).
 
+## ChangeLog
+
+Here you can find the [ChangeLog](CHANGELOG.md).
+
 ## Support the development
 
 **Do you like this project? Support it by:**
@@ -48,4 +52,4 @@ Thank you for considering to contribute to Ouch. All the contribution guidelines
 
 ## License
 
-Ouch is an open-source software licensed under the [MIT license](LICENSE.md).
+Ouch is an open-source software licensed under the [MIT license](LICENSE).
