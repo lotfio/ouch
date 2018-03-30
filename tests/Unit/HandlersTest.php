@@ -164,4 +164,16 @@ class HandlersTest extends TestCase
         $this->handlers->whichError("Warning", 2, "error.php", 15);
     }
 
+    /**
+     * testSerErrorMethod
+     * @return array error
+     */
+    public function testSetErrorMethod()
+    {
+
+        $errors = $this->handlers->setError(15, "warning error test ! ", 'errorFile.php', 5, 'className',[]);
+
+        $this->assertInternalType('array', $errors);
+    }
+
 }
