@@ -1,19 +1,8 @@
-@font-face {
-font-family: "FontAwesome";
-font-weight: normal;
-font-style : normal;
-        src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
-        src : url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
-                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
-                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
-                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
-                url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
-}
 .icon {
     position: absolute;
-    top: 11px;
+    top: 9px;
     display: inline-block;
-    font: normal normal 16px/1 'FontAwesome';
+    font: normal normal 19px/1 'FontAwesome';
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     margin-right: 4px;
