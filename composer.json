@@ -1,10 +1,10 @@
 {
-    "name": "lotfio-lakehal/ouch",
+    "name": "lotfio/ouch",
     "description": "Ouch Error handler for PHP",
     "license": "MIT",
     "authors": [
         {
-            "name": "lotfio-lakehal",
+            "name": "lotfio",
             "email": "lotfiolakehal@gmail.com"
         }
     ],
