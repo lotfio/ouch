@@ -17,7 +17,7 @@ pre[class*=language-]  span:first-child
     clear: both;
 }
 .error-section{
-    padding: 30px 0px;
+    padding: 20px 0px;
     background: #fff;
     margin: 10px 0 0 0;
     box-shadow: 0 0.05rem 0.2rem rgba(69,77,93,.3);
