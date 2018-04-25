@@ -77,6 +77,19 @@ pre[class*=language-]  span:first-child
     height: 0;
     overflow: hidden;
 }
+.menu-info ul{
+    margin: 0;
+    padding: 0;
+}
+.menu-info ul li{
+    list-style: none;
+    margin: 0;
+    padding:  10px;
+    word-wrap: break-word;
+}
+.menu-info ul li:nth-child(even){
+    background: #eee;
+}
 .active-info-menu{
     height: 100%;
     margin-top: 10px;

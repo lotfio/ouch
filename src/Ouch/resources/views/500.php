@@ -116,7 +116,7 @@
 
                                if($ex->trace){
 
-                                   print_r($ex->trace);
+                                    echo unpackError($ex->trace);
                                }
                                ?>
                                 </ul>

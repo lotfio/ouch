@@ -9,7 +9,7 @@
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
 ![language](https://img.shields.io/badge/PHP-7-blue.svg)
-![version](https://img.shields.io/badge/Version-0.1.0-red.svg)
+![version](https://img.shields.io/badge/Version-0.1.1-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-green.svg)
 ![build](https://img.shields.io/badge/build-passing-8e44ad.svg)
 
@@ -25,7 +25,7 @@
 
 # Instalation & Use :
 ```
-    composer require lotfio-lakehal/ouch
+    composer require lotfio/ouch
 ```
 
 ### Use it:
@@ -45,11 +45,8 @@ Here you can find the [ChangeLog](CHANGELOG.md).
 
 ## Support the development
 
-**Do you like this project? Support it by:**
-
-- Donate   : paypal.
-- Share it : facebook, twitter, or on your website.
+- Share **Ouch** and lets get more stars and more contributors.
 
 ## License
 
-Ouch is an open-source software licensed under the [MIT license](LICENSE).
+***Ouch*** is an open-source software licensed under the [MIT license](LICENSE).

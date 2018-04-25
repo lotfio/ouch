@@ -97,6 +97,31 @@ if(! function_exists('str_last'))
     }
 }
 
+if(! function_exists('unpackError'))
+{
+    /**
+     * recursively unpack exception
+     * @param  array $array
+     * @return string       
+     */
+    function unpackError($array) 
+    {
+        $out = '';
+        foreach($array as $key => $value) {
+            
+            if(!is_array($value)) {
+
+                $out .= '<li>' . $value . '</li>';
+
+            } else {
+
+                $out .= unpackError($value);
+            }
+        }
+        return $out;
+    }
+}
+
 
 if(!function_exists('readErrorFile'))
 {
