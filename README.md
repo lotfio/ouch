@@ -11,8 +11,8 @@
 ![language](https://img.shields.io/badge/PHP-7-blue.svg)
 ![version](https://img.shields.io/badge/Version-0.1.7-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-blue.svg)
-![build](https://travis-ci.org/lotfio/ouch.svg?branch=master)
-[![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=master)](https://github.styleci.io/repos/117599927)
+![build](https://travis-ci.org/lotfio/ouch.svg?branch=develop)
+[![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=develop)](https://github.styleci.io/repos/117599927)
 
 ## How it looks like :
 ![screenshot capture - 2018-05-25 - 15-54-29](https://user-images.githubusercontent.com/18489496/40551150-1391aad2-6034-11e8-8924-7ef421b76945.png)
