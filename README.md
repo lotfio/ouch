@@ -9,18 +9,18 @@
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
 ![language](https://img.shields.io/badge/PHP-7-blue.svg)
-![version](https://img.shields.io/badge/Version-0.1.1-red.svg)
-![coverage](https://img.shields.io/badge/coverage-30%25-green.svg)
-![build](https://img.shields.io/badge/build-passing-8e44ad.svg)
+![version](https://img.shields.io/badge/Version-0.1.7-red.svg)
+![coverage](https://img.shields.io/badge/coverage-30%25-blue.svg)
+![build](https://travis-ci.org/lotfio/ouch.svg?branch=master)
+[![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=master)](https://github.styleci.io/repos/117599927)
 
 ## How it looks like :
-![2018-02-28-19-13-timino io](https://user-images.githubusercontent.com/18489496/36804680-973f3e4c-1cbb-11e8-9d27-f6e7d09a3993.png)
+![screenshot capture - 2018-05-25 - 15-54-29](https://user-images.githubusercontent.com/18489496/40551150-1391aad2-6034-11e8-8924-7ef421b76945.png)
 ## Features :
 - Simple and easy to use
 - Catch all Errors and Exceptions
 - Catch Fatal Errors
 - Transforms all errors to Exceptions
-- Follow PSR coding style guidelines
 
 # Instalation & Use :
 ```
@@ -29,8 +29,8 @@
 
 ### Use it:
 ```php
-    $ouch = new Ouch\Core\Reporter;
-    $ouch->enable();
+    $ouch = new Ouch\Reporter;
+    $ouch->on();
 ```
 
 

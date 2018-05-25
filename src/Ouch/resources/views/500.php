@@ -32,7 +32,7 @@
 
                 <div class="column col-6 col-md-12 text-center">
                     <h1><?=str_last($ex->class)?></h1>
-                    <h5><?= $ex->message . ' in line: <span class="error-line">'.$ex->line . '</span>' ?></h5>
+                    <h5><?= $ex->message.' in line: <span class="error-line">'.$ex->line.'</span>' ?></h5>
                 </div>
             </div>
         </div>
@@ -87,10 +87,9 @@
 
                     <div class="menu-info">
                         <ul>
-                            <?php foreach($_SERVER as $key => $vl)
-                            {
-                                echo "<li><span><b>" . $key . "</b><span> : " . $vl . "</li>";
-                            } ?>
+                            <?php foreach ($_SERVER as $key => $vl) {
+    echo '<li><span><b>'.$key.'</b><span> : '.$vl.'</li>';
+} ?>
                         </ul>
                     </div>
                     
@@ -114,9 +113,8 @@
                             <ul>
                                <?php
 
-                               if($ex->trace){
-
-                                    echo unpackError($ex->trace);
+                               if ($ex->trace) {
+                                   echo unpackError($ex->trace);
                                }
                                ?>
                                 </ul>
