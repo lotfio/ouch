@@ -20,7 +20,7 @@
 - Catch all Errors and Exceptions
 - Catch Fatal Errors
 - Transforms all errors to Exceptions
-- Uses PHP >= 7 
+- Uses PHP >= 5.6 
 - Follow PSR coding style guidelines
 
 # Instalation & Use :
