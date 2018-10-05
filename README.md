@@ -5,10 +5,14 @@
    
    Ouch is simple and lightweight ErrorHandler package for PHP. It is aimed to help you debug PHP 
     errors in a nice and detailed way.
+    
+ ## Offical package for SilverEngine Framework :
+ 
+ [SilverEngine Framework](https://github.com/SilverEngine/Framework)
 
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
-![language](https://img.shields.io/badge/PHP-7-blue.svg)
+![language](https://img.shields.io/badge/php-5.6-green.svg)
 ![version](https://img.shields.io/badge/Version-0.1.0-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-green.svg)
 ![build](https://img.shields.io/badge/build-passing-8e44ad.svg)
