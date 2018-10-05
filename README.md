@@ -25,13 +25,16 @@
 
 # Instalation & Use :
 ```
-    composer require lotfio-lakehal/ouch dev-develop //this is develop branch stable release will be available soon
+    composer require  "lotfio/ouch" //this is develop branch stable release will be available soon
+        "require": {
+        "lotfio/ouch": "dev-develop"  //5.6
+    },
 ```
 
 ### Use it:
 ```php
-    $ouch = new Ouch\Core\Reporter;
-    $ouch->enable();
+   $ouch = new Ouch\Reporter;
+   $ouch->on();
 ```
 
 
