@@ -5,6 +5,7 @@
    
    Ouch is simple and lightweight ErrorHandler for PHP. It is aimed to help you debug PHP 
     errors in a nice and detailed way.
+    Offical @SilverEngine error handler
 
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
