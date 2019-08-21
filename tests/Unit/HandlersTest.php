@@ -16,7 +16,7 @@ class HandlersTest extends TestCase
     /**
      * setUp method set handlers.
      */
-    public function setUp()
+    public function setUp() : void
     {
         $this->handlers = new Handlers();
     }
@@ -173,6 +173,6 @@ class HandlersTest extends TestCase
     {
         $errors = $this->handlers->setError(15, 'warning error test ! ', 'errorFile.php', 5, 'className', []);
 
-        $this->assertInternalType('array', $errors);
+        $this->assertIsArray($errors);
     }
 }
