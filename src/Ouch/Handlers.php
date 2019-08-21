@@ -54,7 +54,9 @@ class Handlers implements HandlersInterface
             $e->getTrace()
         );
 
-        View::render('500.php', (object) $this->errors);
+        die(
+            View::render('500.php', (object) $this->errors)
+        );
     }
 
     /**
@@ -74,9 +76,9 @@ class Handlers implements HandlersInterface
                 'FatalErrorException'
             );
 
-            View::render('500.php', (object) $this->errors);
-
-            return;
+            die(
+                View::render('500.php', (object) $this->errors)
+            );
         }
     }
 

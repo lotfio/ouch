@@ -24,12 +24,16 @@ class View
      */
     public static function render($file, $ex) : void
     {
+        // TODO create a nice cli view
         if (php_sapi_name() === 'cli') {
             exit(json_encode($ex));
         }
 
         http_response_code(500);
-        require ouch_views($file);
-        exit(1); //stop execution on first error
+        $view = require ouch_views($file);
+
+        die(
+            $view
+        );
     }
 }
