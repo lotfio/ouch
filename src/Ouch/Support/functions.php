@@ -77,16 +77,24 @@ if (!function_exists('unpackError')) {
      */
     function unpackError($array)
     {
-        $out = '';
-        foreach ($array as $key => $value) {
-            if (!is_array($value)) {
-                $out .= '<li>'.$value.'</li>';
-            } else {
-                $out .= unpackError($value);
-            }
+        $arr = array();
+
+        foreach($array as  $key => $value)
+        {
+        if(isset($value['args']))
+                unset($value['args']); 
+                $arr[] = $value;
         }
 
-        return $out;
+        foreach($arr as $ar)
+        {
+            echo '<li>';
+            foreach($ar as $key => $value)
+            {
+                echo '<b>' . ucfirst($key) . '</b> : '.  ucfirst($value) . "<br>";
+            }
+            echo '</li>';
+        }
     }
 }
 

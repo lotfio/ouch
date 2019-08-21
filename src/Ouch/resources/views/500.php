@@ -87,9 +87,10 @@
 
                     <div class="menu-info">
                         <ul>
-                            <?php foreach ($_SERVER as $key => $vl) {
-    echo '<li><span><b>'.$key.'</b><span> : '.$vl.'</li>';
-} ?>
+                            <?php foreach ($_SERVER as $key => $vl) 
+                            {
+                                echo '<li><span><b>'.$key.'</b><span> : '.$vl.'</li>';
+                            }?>
                         </ul>
                     </div>
                     
@@ -110,14 +111,7 @@
                         </ul>
 
                         <div class="menu-info">
-                            <ul>
-                               <?php
-
-                               if ($ex->trace) {
-                                   echo unpackError($ex->trace);
-                               }
-                               ?>
-                                </ul>
+                            <ul><?php if ($ex->trace) unpackError($ex->trace);?></ul>
                         </div>
                         
                     </div>
