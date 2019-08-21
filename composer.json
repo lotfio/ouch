@@ -9,8 +9,9 @@
         }
     ],
     
-    "require": {},
-
+    "require": {
+        "php": "^7.2"
+    },
     "autoload": {
         "files":[
             "src/Ouch/Support/functions.php"
