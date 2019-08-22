@@ -2,15 +2,15 @@
 ![ouch](https://user-images.githubusercontent.com/18489496/36539671-dbf89a76-17d7-11e8-99e1-b372935b83c4.png)
 
 ## About Ouch :
-   
-   Ouch is simple and lightweight ErrorHandler for PHP. It is aimed to help you debug PHP 
+
+   Ouch is simple and lightweight ErrorHandler for PHP. It is aimed to help you debug PHP
     errors in a nice and detailed way.
     ouch is the Offical @SilverEngine framework error handler.
 
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
 ![language](https://img.shields.io/badge/PHP-7-blue.svg)
-![version](https://img.shields.io/badge/Version-0.1.9-red.svg)
+![version](https://img.shields.io/badge/Version-0.2.0-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-blue.svg)
 ![build](https://travis-ci.org/lotfio/ouch.svg?branch=develop)
 [![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=develop)](https://github.styleci.io/repos/117599927)
@@ -30,8 +30,8 @@
 
 ### Use it:
 ```php
-    $ouch = new Ouch\Reporter;
-    $ouch->on();
+    $ouch = new Ouch\Ouch;
+    $ouch->enableErrorHandler();
 ```
 
 
