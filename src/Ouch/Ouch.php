@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Ouch;
 
-class Reporter
+class Ouch
 {
     /**
      * @var HandlersSetter
@@ -36,7 +36,7 @@ class Reporter
      *
      * @return $this
      */
-    public function on() : self
+    public function enableErrorHandler() : self
     {
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
@@ -51,7 +51,7 @@ class Reporter
      *
      * @return void
      */
-    public function off() :void
+    public function disableErrorHandler() :void
     {
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();
