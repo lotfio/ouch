@@ -27,6 +27,7 @@ class Reporter
     public function __construct()
     {
         ini_set('display_errors', '0'); // prevent error duplication on fatal
+        error_reporting(0); // prevent duplicate on cli
         $this->handler = new HandlersSetter(new Handlers());
     }
 
