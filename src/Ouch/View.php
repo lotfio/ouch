@@ -42,7 +42,7 @@ class View
             self::writeLn("\n   ");
             self::writeLn(" => ".$ex->class . " ", "37", "41", '3');
             self::writeLn("\n\n          ");
-            self::writeLn(($ex->message), "32");
+            self::writeLn(wordwrap($ex->message, 100), "32");
 
             self::writeLn("\n\n   ");
             self::writeLn(" => At    : ", "33");
