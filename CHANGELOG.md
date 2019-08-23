@@ -8,5 +8,5 @@
  - rename Reporter to ouch
  - rename on  => enableErrorHandler (makes more sense)
  - rename off => disableErrorHandler (makes more sense)
-
- - adding CLI error reporting
+ - adding a better function for read error file
+ - adding support for console errors
