@@ -18,10 +18,12 @@
 ## How it looks like :
 ![screenshot capture - 2018-05-25 - 15-54-29](https://user-images.githubusercontent.com/18489496/40551150-1391aad2-6034-11e8-8924-7ef421b76945.png)
 ## Features :
-- Simple and easy to use
-- Catch all Errors and Exceptions
-- Catch Fatal Errors
-- Transforms all errors to Exceptions
+- Simple and easy to use.
+- Transforms all errors to Exceptions.
+- Catches all Errors and Exceptions.
+- Catches Fatal Errors.
+- Displays friendly Html errors.
+- Displays friendly console (CLI) errors.
 
 # Instalation & Use :
 ```
@@ -44,7 +46,7 @@ Thank you for considering to contribute to Ouch. All the contribution guidelines
 Here you can find the [ChangeLog](CHANGELOG.md).
 
 ## Support the development
-
++
 - Share **Ouch** and lets get more stars and more contributors.
 
 ## License
