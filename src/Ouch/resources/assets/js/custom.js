@@ -10,7 +10,7 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
 	'spaces-to-tabs': 4
 });
 
-menu = document.getElementsByClassName('menu-item');
+var menu = document.getElementsByClassName('menu-item');
 
 for(var i = 0; i < menu.length; i++)
 {
