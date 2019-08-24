@@ -45,7 +45,7 @@ class View
             self::writeLn(wordwrap($ex->message, 100), "32");
 
             self::writeLn("\n\n   ");
-            self::writeLn(" => At    : ", "33");
+            self::writeLn(" => File  : ", "33");
             self::writeLn($ex->file , "32");
 
             self::writeLn("\n   ");
@@ -61,7 +61,7 @@ class View
             self::writeLn(($ex->type), "32");
 
             self::writeLn("\n    => Trace :  ", "33");
-            self::writeLn(json_encode($ex->trace), "32");
+            self::writeLn(json_encode(array_slice($ex->trace, 0, 2)), "32");
             self::writeLn("\n");
 
             die;

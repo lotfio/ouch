@@ -5,51 +5,62 @@ body{
 /* prism custom style */
 pre[class*=language-]{
     margin: 0;
-    box-shadow: 0px 0px 11px #0c0c0c;
+    border-radius: 2px;
+    border: 5px double #333;
+    min-height: 260px;
 }
 pre[class*=language-]  span:first-child
 {
     margin-left: -4px;
+}
+.code-holder{
+    padding: 20px 20px 0 20px;
+    background: #272822;
+}
+/* page style */
+.clear-fix{
+    clear: both;
+}
+
+ul{
+    margin: 0;
+}
+.menu-info ul > li {
+    list-style: none;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-left: 4px solid #ddd;
+}
+
+.menu-info ul > li:nth-of-type(odd){
+    background: #e8e8e8;
+}
+.menu-info ul > li:nth-of-type(even){
+    background: #dadee4;
+}
+.menu-info .trace{
+    margin-top: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 429px;
 }
 
 /* page style */
 .clear-fix{
     clear: both;
 }
-.error-section{
-    padding: 20px 0px;
-    background: #fff;
-    margin: 10px 0 0 0;
-    box-shadow: 0 0.05rem 0.2rem rgba(69,77,93,.3);
-}
 
-.server-info{
-    margin: 10px 0;
-    border-radius: .03rem;
-}
-
-.text-editor{
-    padding: 20px;
-    background: #282822;
-    border-radius: 0.3rem;
-    margin-top: 11px;
-}
-.text-editor h5{
-    margin-bottom: 15px;
-    color: #e4e4e4;
-}
-.error-line{
-    background: #ea2760;
-    color: #fff;
-    display: inline-block;
-    padding: 0px 20px;
-}
 .text-center{
     text-align: center;
 }
 .help-links{
     float: right;
-    margin-top: 15px;
+}
+.error{
+    color: #fff;
+    margin-bottom: 15px;
 }
 .help-links a { 
     display: inline-block;
@@ -59,6 +70,8 @@ pre[class*=language-]  span:first-child
     box-shadow: 0px 0px 5px #000;
     position: relative;
     margin-left: 3px;
+    top: -6px;
+    left: -5px;
 }
 .help-links a:nth-child(2) span
 {
@@ -66,33 +79,19 @@ pre[class*=language-]  span:first-child
     top: 9px;
 }
 
-/* error debug menu*/
-.menu-icon{
-    position: static;
+hr{
+    border: 0;
+    height: 2px;
+    background: rebeccapurple;
 }
-.menu-info{
-    margin-top: 0;
-    padding: 0;
-    background: #fff;
-    height: 0;
-    overflow: hidden;
+.code-error{
+    padding: 20px;
+    margin: 5px 0;
+    color: #fff;
+    background: #272822;
 }
-.menu-info ul{
-    margin: 0;
-    padding: 0;
-}
-.menu-info ul li{
-    list-style: none;
-    margin: 0;
-    padding:  10px;
-    word-wrap: break-word;
-}
-.menu-info ul li:nth-child(even){
-    background: #eee;
-}
-.active-info-menu{
-    height: 100%;
-    margin-top: 10px;
-    padding: .4rem;
-    overflow: auto;
+.code-error div:first-of-type{
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff6565;
 }
