@@ -82,7 +82,7 @@ ul{
 hr{
     border: 0;
     height: 2px;
-    background: rebeccapurple;
+    background: #272822;
 }
 .code-error{
     padding: 12px 20px;

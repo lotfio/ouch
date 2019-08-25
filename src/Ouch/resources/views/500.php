@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="code-holder">
-                        <div class="error"> <?=$ex->file?></div>
+                        <div class="error"> <?=$ex->file?>   <span style="color:#00bcd4"> line : <?=$ex->line?></span></div>
                     <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
 
                     <br>
@@ -77,9 +77,7 @@
                     <div class="menu-info">
                             <ul class="trace">
                                 <?php if(is_array($ex->trace)):?>
-                                    <?php foreach($ex->trace as $trace):?>
-                                        <li><?=$trace?></li>
-                                    <?php endforeach?>
+                                    <?php unpackError($ex->trace)?>
                                <?php endif?>
                             </ul>
                     </div>
@@ -96,8 +94,8 @@
                     <div class="menu-info">
                             <ul class="server">
                                 <?php if(is_array($_SERVER)):?>
-                                    <?php foreach($_SERVER as $trace):?>
-                                        <li><?=$trace?></li>
+                                    <?php foreach($_SERVER as $key => $value):?>
+                                        <li><b><?=$key?> : </b> <?=$value?></li>
                                     <?php endforeach?>
                                <?php endif?>
                             </ul>
