@@ -20,7 +20,13 @@
     <script>
         <?php include ouch_assets('js/prism.min.js')?>
         <?php include ouch_assets('js/custom.js')?>
+
+        window.onload = () => {
+            document.getElementsByTagName("code")[0].firstChild.remove();
+        }
+
     </script>
+
 </head>
 <body>
 
@@ -72,27 +78,26 @@
                 </div>
 
             </div>
-            <div class="column col-4">
 
+            <div class="column col-4" style="position:absolute;right:0; height:100%">
                     <div class="menu-info">
+                        <div>Exception trace</div>
                             <ul class="trace">
-                                <?php if(is_array($ex->trace)):?>
+                                <?php if(!empty($ex->trace)):?>
                                     <?php unpackError($ex->trace)?>
+                                <?php else:?>
+                                    <li>no trace ...</li>
                                <?php endif?>
                             </ul>
                     </div>
             </div>
-        </div>
-    </div>
 
-    <!-- grid nesting example -->
-    <div class="container">
-            <div class="columns">
-                <div class="column col-12">
+            <div class="column col-8">
                     <hr>
 
                     <div class="menu-info">
                             <ul class="server">
+                                <li>Server Request data :</li>
                                 <?php if(is_array($_SERVER)):?>
                                     <?php foreach($_SERVER as $key => $value):?>
                                         <li><b><?=$key?> : </b> <?=$value?></li>
@@ -101,7 +106,9 @@
                             </ul>
                         </div>
                 </div>
-            </div>
         </div>
+    </div>
+
+
 </body>
 </html>
