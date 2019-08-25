@@ -62,7 +62,7 @@ ul{
     color: #fff;
     margin-bottom: 15px;
 }
-.help-links a { 
+.help-links a {
     display: inline-block;
     padding: 18px 18px;
     color: #fff;
@@ -85,13 +85,27 @@ hr{
     background: rebeccapurple;
 }
 .code-error{
-    padding: 20px;
+    padding: 12px 20px;
     margin: 5px 0;
     color: #fff;
     background: #272822;
 }
-.code-error div:first-of-type{
+.code-error div > div:first-of-type{
     font-size: 22px;
     font-weight: bold;
     color: #ff6565;
+}
+
+.copy{
+    display: inline-block;
+    padding: 0px 10px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-size: 11px;
+    line-height: 0.7rem;
+    cursor: pointer;
+}
+.copy:hover{
+    color: #9c9c9c;
+    border-color: #9c9c9c;
 }
