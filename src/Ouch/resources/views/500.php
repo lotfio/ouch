@@ -20,11 +20,6 @@
     <script>
         <?php include ouch_assets('js/prism.min.js')?>
         <?php include ouch_assets('js/custom.js')?>
-
-        window.onload = () => {
-            document.getElementsByTagName("code")[0].firstChild.remove();
-        }
-
     </script>
 
 </head>
@@ -43,7 +38,10 @@
                     <div class="pull-left">
                         <div><?=$ex->class?></div>
                         <div><?=$ex->message?>
-                        <span  class="copy">copy</span></div>
+                        <span  class="copy" data-copy="<?=$ex->message?>" onclick="copy(this)">copy
+                            <span class="tooltip"></span>
+                        </span>
+                        </div>
                     </div>
 
                     <div class="logo pull-right">

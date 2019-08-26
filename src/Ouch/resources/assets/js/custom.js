@@ -9,3 +9,15 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
 	'tabs-to-spaces': 4,
 	'spaces-to-tabs': 4
 });
+
+function copy(elem) {
+
+	var input = document.createElement('input');
+    input.setAttribute('value', elem.dataset.copy);
+    document.body.appendChild(input);
+    input.select();
+	var result = document.execCommand('copy');
+	elem.innerText = "copied !";
+    document.body.removeChild(input)
+    return result;
+}
