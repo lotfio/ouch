@@ -28,10 +28,10 @@
 
  <!-- grid nesting example -->
     <div class="container">
-        <div class="columns">
+        <div class="left-side">
 
 
-            <div class="column col-8">
+            <div class="editio-holder">
 
                 <div class="code-error">
 
@@ -77,34 +77,39 @@
 
             </div>
 
-            <div class="column col-4" style="position:absolute;right:0; height:100%">
-                    <div class="menu-info">
-                        <div>Exception trace</div>
-                            <ul class="trace">
-                                <?php if(!empty($ex->trace)):?>
-                                    <?php unpackError($ex->trace)?>
-                                <?php else:?>
-                                    <li>no trace ...</li>
-                               <?php endif?>
-                            </ul>
-                    </div>
+            <!-- server info -->
+            <hr>
+            <div class="menu-info">
+                <ul class="server">
+                    <li>Server Request data</li>
+                    <?php if(is_array($_SERVER)):?>
+                        <?php foreach($_SERVER as $key => $value):?>
+                            <li><b><?=$key?> : </b> <?=$value?></li>
+                        <?php endforeach?>
+                    <?php endif?>
+                </ul>
             </div>
 
-            <div class="column col-8">
-                    <hr>
+        </div><!-- end of left side -->
 
-                    <div class="menu-info">
-                            <ul class="server">
-                                <li>Server Request data :</li>
-                                <?php if(is_array($_SERVER)):?>
-                                    <?php foreach($_SERVER as $key => $value):?>
-                                        <li><b><?=$key?> : </b> <?=$value?></li>
-                                    <?php endforeach?>
-                               <?php endif?>
-                            </ul>
-                        </div>
-                </div>
+        <!-- right side -->
+        <div class="right-side">
+            <div class="menu-info">
+                <div>Exception trace</div>
+                    <ul class="trace">
+                        <?php if(!empty($ex->trace)):?>
+                            <?php unpackError($ex->trace)?>
+                        <?php else:?>
+                            <li>no trace ...</li>
+                            <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
+                            <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
+                            <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
+                        <?php endif?>
+                    </ul>
+            </div>
         </div>
+        <!-- end of right side -->
+        <div class="clear-fix"></div>
     </div>
 
 
