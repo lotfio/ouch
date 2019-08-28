@@ -1,5 +1,6 @@
 body{
-    background: #eee;
+    background: #fff;
+    padding: 20px;
 }
 
 /* prism custom style */
@@ -16,6 +17,7 @@ pre[class*=language-]  span:first-child
 .code-holder{
     padding: 20px 20px 0 20px;
     background: #272822;
+    border-bottom-right-radius: 25px;
 }
 /* page style */
 .clear-fix{
@@ -57,7 +59,7 @@ ul{
     height: 600px;
 }
 
-.menu-info  > div:first-of-type, .menu-info .server li:first-of-type{
+.menu-info  > div:first-of-type, .menu-info .server div:first-of-type{
     font-weight: bold;
     border: 0;
     text-align: center;
@@ -109,6 +111,7 @@ hr{
     margin: 5px 0;
     color: #fff;
     background: #272822;
+    border-top-left-radius: 25px;
 }
 .code-error div > div:first-of-type{
     font-size: 22px;

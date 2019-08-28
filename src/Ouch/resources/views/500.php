@@ -81,7 +81,7 @@
             <hr>
             <div class="menu-info">
                 <ul class="server">
-                    <li>Server Request data</li>
+                    <div>Server Request data</div>
                     <?php if(is_array($_SERVER)):?>
                         <?php foreach($_SERVER as $key => $value):?>
                             <li><b><?=$key?> : </b> <?=$value?></li>
@@ -100,7 +100,6 @@
                         <?php if(!empty($ex->trace)):?>
                             <?php unpackError($ex->trace)?>
                         <?php else:?>
-                            <li>no trace ...</li>
                             <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
                             <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
                             <li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li><li><b>Line :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo itaque repellat ea repellendus eaque, dolore, recusandae accusamus quasi in perspiciatis, ad porro nostrum eos quas adipisci eveniet voluptas nobis deserunt?</li>
