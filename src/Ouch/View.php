@@ -25,7 +25,11 @@ class View
      */
     public static function writeLn($line, $color = 37, $bg = 48, $bold = 0)
     {
-        return fwrite(STDOUT,"\e[".$bold.';'.$color.';'.$bg.'m'.$line."\e[0m");
+        if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
+            $line = "\e[".$bold.';'.$color.';'.$bg.'m'.$line."\e[0m";
+        }
+        
+        return fwrite(STDOUT, $line);
     }
     /**
      * render view method.
