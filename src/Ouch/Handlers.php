@@ -17,6 +17,12 @@ use Ouch\Contracts\HandlersInterface;
 class Handlers implements HandlersInterface
 {
     /**
+     * envirenment variable
+     *
+     * @var string
+     */
+    public $env;
+    /**
      * errors repo.
      *
      * @var array
@@ -55,7 +61,7 @@ class Handlers implements HandlersInterface
         );
 
         die(
-            View::render('500.php', (object) $this->errors)
+            View::render('500.php', (object) $this->errors, $this->env)
         );
     }
 
@@ -77,7 +83,7 @@ class Handlers implements HandlersInterface
             );
 
             die(
-                View::render('500.php', (object) $this->errors)
+                View::render('500.php', (object) $this->errors, $this->env)
             );
         }
     }

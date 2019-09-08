@@ -39,8 +39,11 @@ class View
      *
      * @return void
      */
-    public static function render($file, $ex) : void
+    public static function render($file, $ex, $env) : void
     {
+        if(strtolower($env) === 'pro')
+            self::renderProduction();
+        
        if (php_sapi_name() === 'cli') { // if cli
 
             self::writeLn("\n   ");
@@ -75,6 +78,26 @@ class View
         http_response_code(500);
         $view = require ouch_views($file);
 
+        die(
+            $view
+        );
+    }
+
+    /**
+     * render production errors
+     */
+    public static function renderProduction()
+    {
+        if (php_sapi_name() === 'cli')
+        {
+            die(
+                self::writeLn("\n    Ouch ! an error occurred.  \n", "37", "41")
+            );
+        }
+
+       // if http
+       http_response_code(500);
+       $view = require ouch_views("501.php");
         die(
             $view
         );

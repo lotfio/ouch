@@ -32,6 +32,17 @@ class HandlersSetter
     }
 
     /**
+     * set envirenment
+     *
+     * @param string $env  pro | dev
+     * @return string
+     */
+    public function setEnvirenment(string $env) : string
+    {
+        return $this->handlers->env = $env;
+    }
+
+    /**
      * set error Handler.
      *
      * @return void
