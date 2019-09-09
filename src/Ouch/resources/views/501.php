@@ -8,10 +8,6 @@
     <!-- css style should be included here -->
     <style>
         <?php include ouch_assets('css/spectre.min.css')?>
-        <?php include ouch_assets('css/prism.min.css')?>
-        <?php include ouch_assets('css/icons.min.css')?>
-        <?php include ouch_assets('css/custom.css')?>
-        <?php include ouch_assets('css/font.min.css')?>
         .center {
             height: 90vh;
             display: flex;
