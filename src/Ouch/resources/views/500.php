@@ -16,20 +16,25 @@
 
     <!-- page title based on error type -->
     <title>Ouch | <?=str_last($ex->class)?></title>
-
 </head>
 <body>
 
-
+<?=str_last($ex->message)?>
     <div class="container">
     <div class="columns">
 
     <!-- Exceptions column -->
-        <div class="column col-3 mt-10 exp-column">
+        <div class="column col-3 mt-10 exp-column" id="exp-column">
 
-        <?php for($i =0; $i<= 5; $i++):?>
+        <div class="panel exp-panel active" id="exp-0">
+            <div class="panel-body">
+                ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
+            </div>
+        </div>
 
-            <div class="panel exp-panel">
+        <?php for($i =1; $i<= 5; $i++):?>
+
+            <div class="panel exp-panel" id="exp-<?=$i?>">
                 <div class="panel-body">
                    ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
                 </div>
@@ -72,6 +77,30 @@
 
         <!-- tab one -->
         <div id="tab-1-block" class="tab-content show">
+
+            <!-- divider element with text -->
+            <div class="divider text-center" data-content="GET"></div>
+            <div class="dumper">
+                <?php var_dump($_GET)?>
+            </div>
+
+            <!-- divider element with text -->
+            <div class="divider text-center" data-content="POST"></div>
+            <div class="dumper">
+                <?php var_dump($_POST)?>
+            </div>
+
+            <!-- divider element with text -->
+            <div class="divider text-center" data-content="COOKIES"></div>
+            <div class="dumper">
+                <?php var_dump($_COOKIE)?>
+            </div>
+
+
+            <!-- divider element with text -->
+            <div class="divider text-center" data-content="HEADERS"></div>
+
+
             <table class="table table-striped table-hover">
                 <tbody>
                     <?php foreach(getallheaders() as $key => $val): ?>
@@ -90,6 +119,8 @@
 
         <!--  tab two -->
         <div id="tab-2-block" class="tab-content">
+            <!-- divider element with text -->
+            <div class="divider text-center" data-content="SERVER DATA"></div>
             <table class="table table-striped table-hover">
                 <tbody>
 
@@ -102,6 +133,11 @@
                 </tbody>
             </table>
 
+            <!-- divider element with text -->
+                        <div class="divider text-center" data-content="ARGS"></div>
+            <div class="dumper">
+                <?php global $argv; var_dump($argv)?>
+            </div>
         </div>
         <!-- end tab two -->
 
@@ -118,7 +154,6 @@
         </div>
     </div>
     </div>
-
 
     <script>
         <?php include ouch_assets('js/prism.min.js')?>

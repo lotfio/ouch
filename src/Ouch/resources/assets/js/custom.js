@@ -1,3 +1,7 @@
+
+/**
+ * prism js plugin
+ */
 Prism.plugins.NormalizeWhitespace.setDefaults({
 	'remove-trailing': true,
 	'remove-indent': true,
@@ -10,6 +14,9 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
 	'spaces-to-tabs': 4
 });
 
+/**
+ * copy on function
+ */
 function copy(elem) {
 
 	var input = document.createElement('input');
@@ -22,8 +29,13 @@ function copy(elem) {
     return result;
 }
 
+// fix body height
+document.body.style.height = window.innerHeight + "px";
+
+// tab-items
 var tab = document.getElementsByClassName('tab-item');
 
+// add active and show tab content
 for (let i = 0; i < tab.length; i++)
 {
 	tab[i].addEventListener('click', function(e){
@@ -42,6 +54,11 @@ for (let i = 0; i < tab.length; i++)
 }
 
 
+/**
+ *
+ * @param {element} elem
+ * @param {class to be toggled} cls
+ */
 function cleanSiblings(elem, cls)
 {
 	let siblings = elem.parentElement.children;
@@ -55,4 +72,18 @@ function cleanSiblings(elem, cls)
 	}
 }
 
-document.body.style.height = window.innerHeight + "px";
+
+
+/**
+ * exceptions panel
+ */
+var col = document.getElementById('exp-column').children;
+
+for(let i = 0; i< col.length; i++)
+{
+	col[i].addEventListener('click', function(){
+
+		this.classList.add('active');
+		cleanSiblings(this, 'active');
+	});
+}

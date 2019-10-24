@@ -28,7 +28,7 @@ class View
         if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
             $line = "\e[".$bold.';'.$color.';'.$bg.'m'.$line."\e[0m";
         }
-        
+
         return fwrite(STDOUT, $line);
     }
     /**
@@ -41,9 +41,13 @@ class View
      */
     public static function render($file, $ex, $env) : void
     {
+        // disable errors
+        ob_start();
+        ob_end_clean();
+
         if(strtolower($env) === 'pro')
             self::renderProduction();
-        
+
        if (php_sapi_name() === 'cli') { // if cli
 
             self::writeLn("\n   ");
@@ -72,8 +76,8 @@ class View
             self::writeLn("\n");
 
             die;
-        } 
-        
+        }
+
         // if http
         http_response_code(500);
         $view = require ouch_views($file);

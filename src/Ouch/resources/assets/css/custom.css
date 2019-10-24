@@ -21,6 +21,25 @@ a:focus{
     margin-top: 3px;
     direction: ltr !important;
     background: #fff;
+    cursor: pointer;
+}
+.exp-panel:hover{
+    background: #f9f9f9;
+}
+.exp-panel.active{
+    background: #454d5d54;
+    position: relative;
+}
+.exp-panel.active::after{
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    border-width: 10px 0px 10px 10px;
+    border-style: solid;
+    border-color: #ff000000 #bec0c6;
+    z-index: 545454;
 }
 .exp-column{
     direction: rtl;
@@ -89,5 +108,9 @@ a:focus{
 }
 
 .hero{
+    padding: 20px;
+}
+
+.dumper{
     padding: 20px;
 }
