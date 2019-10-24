@@ -27,7 +27,7 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-                ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
+            <?=$ex->trace[0]['function']?>
             </div>
         </div>
 
@@ -52,8 +52,7 @@
               <!-- editor -->
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
                     <div class="hero-body">
-                        <h1>Hero 0 </h1>
-                        <p>This is a hero example</p>
+                    <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
                     </div>
                 </div>
 
