@@ -1,134 +1,15 @@
-body{
-    background: #fff;
-    padding: 20px;
+a:focus{
+    box-shadow: none;
 }
 
-/* prism custom style */
-pre[class*=language-]{
-    margin: 0;
-    border-radius: 2px;
-    border: 5px double #333;
-    min-height: 260px;
-}
-pre[class*=language-]  span:first-child
-{
-    margin-left: -4px;
-}
-.code-holder{
-    padding: 20px 20px 0 20px;
-    background: #272822;
-    border-bottom-right-radius: 25px;
-}
-/* page style */
-.clear-fix{
-    clear: both;
+.panel .panel-body{
+    padding: 10px 20px;
 }
 
-.left-side{
-    width: 70%;
-    float: left;
+.mt-10{
+    margin-top: 10px;
 }
 
-.right-side{
-    width: 29%;
-    float: right;
-}
-ul{
-    margin: 0;
-}
-.menu-info ul > li {
-    list-style: none;
-    word-wrap: break-word;
-    margin: 0;
-    padding: 10px;
-    margin-bottom: 5px;
-}
-
-.menu-info ul > li:nth-of-type(odd){
-    background: #e8e8e8;
-    border-left: 4px solid #ff6565;
-}
-.menu-info ul > li:nth-of-type(even){
-    background: #dadee4;
-    border-left: 4px solid #607d8b;
-}
-.menu-info .trace{
-    margin-top: 5px;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 600px;
-}
-
-.menu-info  > div:first-of-type, .menu-info .server div:first-of-type{
-    font-weight: bold;
-    border: 0;
-    text-align: center;
-    margin: 5px 0px;
-    padding: 10px 0;
-    background: #607D8B;
-    color: #fff;
-}
-
-/* page style */
-.clear-fix{
-    clear: both;
-}
-
-.text-center{
-    text-align: center;
-}
-.help-links{
-    float: right;
-}
-.error{
-    color: #fff;
-    margin-bottom: 15px;
-}
-.help-links a {
-    display: inline-block;
-    padding: 18px 18px;
-    color: #fff;
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px #000;
-    position: relative;
-    margin-left: 3px;
-    top: -6px;
-    left: -5px;
-}
-.help-links a:nth-child(2) span
-{
-    left: 8px;
-    top: 9px;
-}
-
-hr{
-    border: 0;
-    height: 2px;
-    background: #272822;
-}
-.code-error{
-    padding: 12px 20px;
-    margin: 5px 0;
-    color: #fff;
-    background: #272822;
-    border-top-left-radius: 25px;
-}
-.code-error div > div:first-of-type{
-    font-size: 22px;
-    font-weight: bold;
-    color: #ff6565;
-}
-
-.copy{
-    display: inline-block;
-    padding: 0px 10px;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    font-size: 11px;
-    line-height: 0.7rem;
-    cursor: pointer;
-}
-.copy:hover{
-    color: #9c9c9c;
-    border-color: #9c9c9c;
+.exp-panel{
+    margin-top: 3px;
 }
