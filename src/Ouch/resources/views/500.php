@@ -23,7 +23,7 @@
     <div class="columns">
 
     <!-- Exceptions column -->
-        <div class="column col-3 mt-10 exp-column" id="exp-column">
+        <div class="column col-3 mt-10 exp-column pr-10" id="exp-column">
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
@@ -51,6 +51,14 @@
         <div class="column col-6 mt-10">
             <div class="docs-demo columns">
               <div class="column">
+
+              <div class="error">
+                  <div class="panel mb-10 bg-primary">
+                      <div class="panel-body">
+                          <p><?=$ex->message?></p>
+                      </div>
+                  </div>
+              </div>
 
               <!-- editor -->
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
