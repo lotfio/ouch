@@ -27,19 +27,22 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-            <?=$ex->trace[0]['function']?>
+            <b>line</b> : <?=$ex->line?><br>
+            <b>file</b> : <?=$ex->file?>
             </div>
         </div>
 
-        <?php for($i =1; $i<= 5; $i++):?>
 
-            <div class="panel exp-panel" id="exp-<?=$i?>">
-                <div class="panel-body">
-                   ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
-                </div>
-            </div>
-
-        <?php endfor;?>
+            <?php $i = 1; foreach($ex->trace as $tr):?>
+                <?php if(array_key_exists("file", $tr)):?>
+                    <div class="panel exp-panel" id="exp-<?=$i?>">
+                        <div class="panel-body">
+                        <b>line</b> : <?=$tr['line']?><br>
+                        <b>file</b> : <?=$tr['file']?>
+                        </div>
+                    </div>
+                <?php endif;?>
+            <?php $i++; endforeach;?>
 
         </div>
 
@@ -52,19 +55,23 @@
               <!-- editor -->
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
                     <div class="hero-body">
-                    <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
+                        <span class="line"> <?=$ex->file?> <span><?=$ex->line?></span></span>
+                        <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
                     </div>
                 </div>
 
-            <?php for($i =1; $i<= 5; $i++):?>
-                <!-- editor -->
-                <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
-                    <div class="hero-body">
-                        <h1>Hero <?=$i?></h1>
-                        <p>This is a hero example</p>
+            <?php $i = 1; foreach($ex->trace as $tr):?>
+
+                <?php if(array_key_exists("file", $tr)):?>
+                    <!-- editor -->
+                    <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
+                        <div class="hero-body">
+                            <span class="line"> <?=$tr['file']?> <span><?=$tr['line']?></span></span>
+                            <pre class="language-php"><code><?=readErrorFile($tr['file'], $tr['line'])?></code></pre>
+                        </div>
                     </div>
-                </div>
-            <?php endfor;?>
+                <?php endif;?>
+            <?php $i++; endforeach;?>
 
               </div>
             </div>

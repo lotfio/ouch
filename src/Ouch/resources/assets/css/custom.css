@@ -122,3 +122,15 @@ a:focus{
 .dumper{
     padding: 20px;
 }
+
+code{
+    padding: 0!important;
+}
+.panel-body{
+    word-break: break-all;
+}
+
+.line span{
+    background: #5755d9;
+    padding: 1px 12px;
+}
