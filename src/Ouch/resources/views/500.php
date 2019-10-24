@@ -19,7 +19,6 @@
 </head>
 <body>
 
-<?=str_last($ex->message)?>
     <div class="container">
     <div class="columns">
 
@@ -49,12 +48,25 @@
         <div class="column col-6 mt-10">
             <div class="docs-demo columns">
               <div class="column">
-                <div class="hero hero-sm bg-dark">
-                  <div class="hero-body">
-                    <h1>Hero title</h1>
-                    <p>This is a hero example</p>
-                  </div>
+
+              <!-- editor -->
+              <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
+                    <div class="hero-body">
+                        <h1>Hero 0 </h1>
+                        <p>This is a hero example</p>
+                    </div>
                 </div>
+
+            <?php for($i =1; $i<= 5; $i++):?>
+                <!-- editor -->
+                <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
+                    <div class="hero-body">
+                        <h1>Hero <?=$i?></h1>
+                        <p>This is a hero example</p>
+                    </div>
+                </div>
+            <?php endfor;?>
+
               </div>
             </div>
         </div>

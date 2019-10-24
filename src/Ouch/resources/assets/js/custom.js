@@ -85,5 +85,13 @@ for(let i = 0; i< col.length; i++)
 
 		this.classList.add('active');
 		cleanSiblings(this, 'active');
+
+		let id        = 'hero-' + this.getAttribute('id');
+		let heroBlock = document.getElementById(id);
+
+		heroBlock.classList.add('show-hero');
+
+		cleanSiblings(heroBlock, 'show-hero');
+
 	});
 }
