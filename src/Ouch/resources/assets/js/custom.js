@@ -54,3 +54,5 @@ function cleanSiblings(elem, cls)
 		siblings[v].classList.remove(cls);
 	}
 }
+
+document.body.style.height = window.innerHeight + "px";

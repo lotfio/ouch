@@ -25,12 +25,9 @@
     <div class="columns">
 
     <!-- Exceptions column -->
-        <div class="column col-3 mt-10">
-            <div class="panel exp-panel">
-                <div class="panel-body">
-                   ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
-                </div>
-            </div>
+        <div class="column col-3 mt-10 exp-column">
+
+        <?php for($i =0; $i<= 5; $i++):?>
 
             <div class="panel exp-panel">
                 <div class="panel-body">
@@ -38,11 +35,7 @@
                 </div>
             </div>
 
-            <div class="panel exp-panel">
-                <div class="panel-body">
-                   ExceptionError Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis->()
-                </div>
-            </div>
+        <?php endfor;?>
 
         </div>
 
@@ -77,18 +70,48 @@
             </li>
         </ul>
 
+        <!-- tab one -->
         <div id="tab-1-block" class="tab-content show">
-            TAB 1
-        </div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                    <?php foreach(getallheaders() as $key => $val): ?>
+                        <tr>
+                            <td><b><?=$key?></b></td>
+                            <td><span><?=$val?></span></td>
+                        </tr>
+                    <?php endforeach?>
+                </tbody>
+            </table>
 
+        </div>
+        <!-- end tab one -->
+
+
+
+        <!--  tab two -->
         <div id="tab-2-block" class="tab-content">
-            TAB 2
+            <table class="table table-striped table-hover">
+                <tbody>
+
+                <?php foreach($_SERVER as $key => $val): ?>
+                    <tr>
+                        <td><b><?=$key?></b></td>
+                        <td><span><?=$val?></span></td>
+                    </tr>
+                <?php endforeach?>
+                </tbody>
+            </table>
+
         </div>
+        <!-- end tab two -->
 
 
+
+        <!--  tab three -->
         <div id="tab-3-block" class="tab-content">
             TAB 3
         </div>
+        <!-- end tab two -->
 
 
 

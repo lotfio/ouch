@@ -1,5 +1,12 @@
+body{
+    overflow: hidden;
+}
 a:focus{
     box-shadow: none;
+}
+.tab{
+    margin-bottom: 0;
+    border: 0;
 }
 
 .panel .panel-body{
@@ -12,6 +19,12 @@ a:focus{
 
 .exp-panel{
     margin-top: 3px;
+    direction: ltr !important;
+    background: #fff;
+}
+.exp-column{
+    direction: rtl;
+    background: #f9f9f9;
 }
 
 .tab-content{
@@ -19,4 +32,62 @@ a:focus{
 }
 .show{
     display: block;
+    padding: 20px;;
+    background: #f9f9f9;
+}
+
+.tab .tab-item a.active, .tab .tab-item.active a{
+    border-color: #f9f9f9;
+    background: #f9f9f9;
+}
+
+.column, .columns, .container, .row{
+    height: 100%!important;
+}
+
+.column{
+    overflow: auto;
+}
+
+#tab-2-block ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+#tab-2-block ul li {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#tab-2-block ul li:nth-of-type(odd)
+{
+    background: #fff;
+}
+
+.table td, .table th {
+    border: 0;
+    padding: 0.2rem .6rem;
+    background: transparent;
+    font-size: 12.5px;
+}
+.table .table-striped tbody tr:nth-of-type(even) > td
+{
+    background: #f9f9f9!important;
+}
+.table .table-striped tbody tr:nth-of-type(odd) > td
+{
+    background: #fff!important;
+}
+
+.table td:last-child{
+    word-break: break-all;
+    color: red;
+}
+.table td:first-child{
+    white-space: nowrap;
+}
+
+.hero{
+    padding: 20px;
 }
