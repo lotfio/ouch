@@ -120,6 +120,7 @@ a:focus{
 
 .hero{
     padding: 20px;
+    padding-bottom: 10px;
 }
 
 .dumper{
@@ -136,4 +137,18 @@ code{
 .line span{
     background: #5755d9;
     padding: 1px 12px;
+}
+
+.help-links{
+    float: right;
+}
+.clear-fix{
+    clear: both;
+}
+
+.help-links a{
+    display: inline-block;
+    padding: 6px 8px;
+    background: #fff;
+    border-radius: 50%;
 }

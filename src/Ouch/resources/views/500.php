@@ -55,7 +55,7 @@
               <div class="error">
                   <div class="panel mb-10 bg-primary">
                       <div class="panel-body">
-                          <p><?=$ex->message?></p>
+                          <p><?=str_last($ex->class)?></p> <p><?=$ex->message?></p>
                       </div>
                   </div>
               </div>
@@ -65,6 +65,20 @@
                     <div class="hero-body">
                         <span class="line"> <?=$ex->file?> <span><?=$ex->line?></span></span>
                         <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
+
+                        <!-- debugging helpers -->
+                        <div class="help-links">
+                            <a href="https://stackoverflow.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in stackoverflow">
+                                <i class="fa fa-fw fa-stack-overflow"></i>
+                            </a>
+                            <a href="https://www.reddit.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in reddit">
+                                <i class="fa fa-fw fa-reddit"></i>
+                            </a>
+                            <a href="https://www.google.dz/search?q=PHP <?=$ex->message?>" target="_blank" title="open in google">
+                                <i class="fa fa-fw fa-google"></i>
+                            </a>
+                        </div>
+                        <div class="clear-fix"></div>
                     </div>
                 </div>
 
@@ -77,6 +91,20 @@
                             <span class="line"> <?=$tr['file']?> <span><?=$tr['line']?></span></span>
                             <pre class="language-php"><code><?=readErrorFile($tr['file'], $tr['line'])?></code></pre>
                         </div>
+
+                         <!-- debugging helpers -->
+                         <div class="help-links">
+                            <a href="https://stackoverflow.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in stackoverflow">
+                                <i class="fa fa-fw fa-stack-overflow"></i>
+                            </a>
+                            <a href="https://www.reddit.com/search?q=PHP <?=$ex->message?>" target="_blank" title="open in reddit">
+                                <i class="fa fa-fw fa-reddit"></i>
+                            </a>
+                            <a href="https://www.google.dz/search?q=PHP <?=$ex->message?>" target="_blank" title="open in google">
+                                <i class="fa fa-fw fa-google"></i>
+                            </a>
+                        </div>
+                        <div class="clear-fix"></div>
                     </div>
                 <?php endif;?>
             <?php $i++; endforeach;?>
