@@ -66,16 +66,29 @@
         <div class="column col-3 mt-10">
 
         <ul class="tab tab-block" id="tab">
-            <li class="tab-item active">
+            <li id="tab-1" class="tab-item active">
                 <a href="#"><i class="fa fa-fw fa-globe"></i> Request </a>
             </li>
-            <li class="tab-item">
-                <a href="#" class="badge" data-badge="9"> <i class="fa fa-fw fa-server"></i> Server  </a>
+            <li id="tab-2" class="tab-item">
+                <a href="#" class="badge" data-badge="5"> <i class="fa fa-fw fa-server"></i> Server  </a>
             </li>
-            <li class="tab-item">
+            <li id="tab-3" class="tab-item">
                 <a href="#"> <i class="fa fa-fw fa-user"></i> User</a>
             </li>
         </ul>
+
+        <div id="tab-1-block" class="tab-content show">
+            TAB 1
+        </div>
+
+        <div id="tab-2-block" class="tab-content">
+            TAB 2
+        </div>
+
+
+        <div id="tab-3-block" class="tab-content">
+            TAB 3
+        </div>
 
 
 

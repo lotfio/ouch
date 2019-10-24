@@ -21,3 +21,36 @@ function copy(elem) {
     document.body.removeChild(input)
     return result;
 }
+
+var tab = document.getElementsByClassName('tab-item');
+
+for (let i = 0; i < tab.length; i++)
+{
+	tab[i].addEventListener('click', function(e){
+
+		this.classList.add('active');
+
+		let id       = this.getAttribute('id') + "-block";
+		let tabBlock = document.getElementById(id);
+
+		tabBlock.classList.add('show');
+
+		cleanSiblings(tabBlock, 'show');
+		cleanSiblings(this, 'active');
+
+	});
+}
+
+
+function cleanSiblings(elem, cls)
+{
+	let siblings = elem.parentElement.children;
+
+	for(let v = 0; v < siblings.length; v++)
+	{
+		if(siblings[v].isEqualNode(elem))
+			continue;
+
+		siblings[v].classList.remove(cls);
+	}
+}

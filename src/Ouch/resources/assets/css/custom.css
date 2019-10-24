@@ -13,3 +13,10 @@ a:focus{
 .exp-panel{
     margin-top: 3px;
 }
+
+.tab-content{
+    display: none;
+}
+.show{
+    display: block;
+}
