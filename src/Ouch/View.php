@@ -66,7 +66,7 @@ class View
             self::writeLn("\n\n");
 
 
-            self::writeLn(rtrim(readErrorFile($ex->file, $ex->line, FALSE)));
+            self::writeLn(rtrim(readErrorFileConsole($ex->file, $ex->line, FALSE)));
 
             self::writeLn("\n\n    => Code  :  ", "33");
             self::writeLn(($ex->type), "32");

@@ -143,3 +143,54 @@ if (!function_exists('readErroLine')) {
         return trim($file[$errorLine]);
     }
 }
+
+if (!function_exists('readErrorFileConsole')) {
+    /**
+     * read error file function.
+     *
+     * @param string $file error file
+     * @param int    $line error line
+     *
+     * @return string
+     * 
+     */
+    function readErrorFileConsole($fileName, $errorLine, $print)
+    {
+        $output      = "";
+        $file        = file($fileName);
+        $file        = array_combine(range(1, count($file)), $file); // change index to 1
+
+        $numberOfLines  = count($file);
+
+        $start = $errorLine >= 6 ? $errorLine - 4 : 1;
+        $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
+
+        $lineSpace = strlen($end); // number of charachters in line to determin how much space 
+        
+        for ($i=$start; $i <= $end; $i++) { 
+
+            $output .= '          ' . $start++;
+
+            if($numberOfLines >= 10) 
+                $output .= str_repeat(' ', $lineSpace - strlen($i) + 1) . '> '; // +1 desired space
+
+            if($numberOfLines < 10)
+                $output .= " > ";
+
+            if($i == $errorLine)
+            {
+                
+                if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
+                    $output .= "\e[3;39;41m" . $file[$i] . "\e[0m";
+                }else{
+                    $output .= $file[$i];
+                }
+
+            }else{
+                $output .= $file[$i]; 
+            }
+    
+        }
+        return $output;
+    }
+}
