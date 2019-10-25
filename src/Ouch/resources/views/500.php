@@ -8,14 +8,21 @@
     <!-- css style should be included here -->
     <style>
         <?php include ouch_assets('css/spectre.min.css')?>
-        <?php include ouch_assets('css/prism.min.css')?>
         <?php include ouch_assets('css/icons.min.css')?>
         <?php include ouch_assets('css/font.min.css')?>
+        <?php include ouch_assets('css/EnlighterJS.min.css')?>
         <?php include ouch_assets('css/custom.css')?>
     </style>
 
+
     <!-- page title based on error type -->
     <title>Ouch | <?=str_last($ex->class)?></title>
+
+
+    <script>
+        <?php include ouch_assets('js/MooTools.min.js')?>
+        <?php include ouch_assets('js/EnlighterJS.min.js')?>
+    </script>
 </head>
 <body>
 
@@ -27,8 +34,8 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-            <b>line</b> : <?=$ex->line?><br>
-            <b>file</b> : <?=$ex->file?>
+                <?=$ex->file?>
+                <code><?=readErroLine($ex->file, $ex->line)?></code>
             </div>
         </div>
 
@@ -37,8 +44,8 @@
                 <?php if(array_key_exists("file", $tr)):?>
                     <div class="panel exp-panel" id="exp-<?=$i?>">
                         <div class="panel-body">
-                        <b>line</b> : <?=$tr['line']?><br>
-                        <b>file</b> : <?=$tr['file']?>
+                            <?=$tr['file']?> 
+                            <code><?=readErroLine($tr['file'], $tr['line'])?></code>
                         </div>
                     </div>
                 <?php endif;?>
@@ -55,7 +62,7 @@
               <div class="error">
                   <div class="panel mb-10 bg-primary">
                       <div class="panel-body">
-                          <p><?=str_last($ex->class)?></p> <p><?=$ex->message?></p>
+                          <p class="exp-exp"><?=str_last($ex->class)?></p> <p><li><?=$ex->message?></li></p>
                       </div>
                   </div>
               </div>
@@ -64,7 +71,8 @@
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
                     <div class="hero-body">
                         <span class="line"> <?=$ex->file?> <span><?=$ex->line?></span></span>
-                        <pre class="language-php"><code><?=readErrorFile($ex->file, $ex->line)?></code></pre>
+                        <pre data-enlighter-language="php" data-enlighter-highlight="<?=$ex->line?>" 
+                        data-enlighter-lineoffset="<?=$ex->line - 4?>"><?=readErrorFile($ex->file, $ex->line)?></pre>
 
                         <!-- debugging helpers -->
                         <div class="help-links">
@@ -89,7 +97,8 @@
                     <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
                         <div class="hero-body">
                             <span class="line"> <?=$tr['file']?> <span><?=$tr['line']?></span></span>
-                            <pre class="language-php"><code><?=readErrorFile($tr['file'], $tr['line'])?></code></pre>
+                            <pre data-enlighter-language="php" data-enlighter-highlight="<?=$tr['line']?>" 
+                        data-enlighter-lineoffset="<?=$tr['line'] - 4?>"><?=readErrorFile($tr['file'], $tr['line'])?></pre>
                         </div>
 
                          <!-- debugging helpers -->
@@ -203,15 +212,21 @@
         </div>
         <!-- end tab two -->
 
-
-
         </div>
     </div>
     </div>
-
     <script>
-        <?php include ouch_assets('js/prism.min.js')?>
         <?php include ouch_assets('js/custom.js')?>
     </script>
+    
+    <script>
+        EnlighterJS.Util.Init('pre', null, {
+            language : 'php',
+            theme : 'classic',
+            indent : 2,
+            renderer: 'Inline'
+        });
+    </script>
+    
 </body>
 </html>

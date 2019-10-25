@@ -2,6 +2,9 @@ body{
     overflow: hidden;
     background: #eee;
 }
+code{
+    background: transparent;
+}
 a:focus{
     box-shadow: none;
 }
@@ -31,7 +34,7 @@ a:focus{
     background: #f9f9f9;
 }
 .exp-panel.active{
-    background: #5755d9;
+    background: #4b49ea;
     position: relative;
     color: #fff;
 }
@@ -40,7 +43,7 @@ a:focus{
     display: block;
     position: absolute;
     right: -10px;
-    top: 20px;
+    top: 5px;
     border-width: 10px 0px 10px 10px;
     border-style: solid;
     border-color: #ff000000 #5755d9;
@@ -151,4 +154,19 @@ code{
     padding: 6px 8px;
     background: #fff;
     border-radius: 50%;
+}
+
+.exp-exp{
+    background: #4b49ea;
+    padding: 5px 20px;
+    font-weight: bold;
+}
+
+ol.classicEnlighterJS li.specialline, 
+ul.classicEnlighterJS li.specialline {
+    background-color: #5e5cde66;
+    border-left-color: #5755d9;
+}
+.EnlighterJSWrapper{
+    margin-top: 15px;
 }

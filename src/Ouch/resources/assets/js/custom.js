@@ -1,22 +1,3 @@
-
-/**
- * prism js plugin
- */
-Prism.plugins.NormalizeWhitespace.setDefaults({
-	'remove-trailing': true,
-	'remove-indent': true,
-	'left-trim': true,
-	'right-trim': true,
-	'break-lines': 120,
-	'indent': 0,
-	'remove-initial-line-feed': true,
-	'tabs-to-spaces': 4,
-	'spaces-to-tabs': 4
-});
-
-/**
- * copy on function
- */
 function copy(elem) {
 
 	var input = document.createElement('input');
@@ -52,8 +33,6 @@ for (let i = 0; i < tab.length; i++)
 
 	});
 }
-
-
 /**
  *
  * @param {element} elem

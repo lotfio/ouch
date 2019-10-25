@@ -105,7 +105,7 @@ if (!function_exists('readErrorFile')) {
      * @param string $file error file
      * @param int    $line error line
      *
-     * @return void
+     * @return string
      * 
      */
     function readErrorFile($fileName, $errorLine, $escape = TRUE)
@@ -119,21 +119,27 @@ if (!function_exists('readErrorFile')) {
         $start = $errorLine >= 6 ? $errorLine - 4 : 1;
         $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
         
-        $lineSpace = strlen($end); // number of charachters in line to determin how much space 
-
         for ($i=$start; $i <= $end; $i++) { 
-            
-        $output .= '          ' . $start++;
-
-        if($numberOfLines >= 10) 
-            $output .= str_repeat(' ', $lineSpace - strlen($i) + 1) . '- '; // +1 desired space
-
-        if($numberOfLines < 10)
-                $output .= " - ";
-        
-        $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i] ; 
+            $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i] ; 
         }
-
         return $output;
+    }
+}
+
+if (!function_exists('readErroLine')) {
+    /**
+     * read error line function.
+     *
+     * @param string $file error file
+     * @param int    $line error line
+     *
+     * @return string
+     * 
+     */
+    function readErroLine($fileName, $errorLine)
+    {
+        $file        = file($fileName);
+        $file        = array_combine(range(1, count($file)), $file); // change index to 1
+        return trim($file[$errorLine]);
     }
 }
