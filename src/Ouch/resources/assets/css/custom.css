@@ -53,7 +53,13 @@ a:focus{
     direction: rtl;
     background: #f9f9f9;
 }
-
+.exp-panel p{
+    margin: 0;
+}
+.exp-panel p:last-child{
+    font-size: 12px;
+    font-weight: bold;
+}
 .tab-content, .hero{
     display: none;
 }

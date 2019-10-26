@@ -34,8 +34,8 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-                <?=$ex->file?>
                 <code><?=readErroLine($ex->file, $ex->line)?></code>
+                <p><?=$ex->file?></p>
             </div>
         </div>
 
@@ -44,8 +44,8 @@
                 <?php if(array_key_exists("file", $tr)):?>
                     <div class="panel exp-panel" id="exp-<?=$i?>">
                         <div class="panel-body">
-                            <?=$tr['file']?> 
                             <code><?=readErroLine($tr['file'], $tr['line'])?></code>
+                            <p><?=$tr['file']?></p>
                         </div>
                     </div>
                 <?php endif;?>
