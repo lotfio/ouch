@@ -32,7 +32,7 @@ a:focus{
     cursor: pointer;
 }
 .exp-panel:hover{
-    background: #f9f9f9;
+    background: #4b49ea1f;
 }
 .exp-panel.active{
     background: #4b49ea;
@@ -128,7 +128,6 @@ a:focus{
 {
     background: #fff!important;
 }
-
 .table td:last-child{
     word-break: break-all;
     color: red;
@@ -176,13 +175,16 @@ code{
     background: #f9f9f9;
     padding: 5px 20px;
     font-weight: bold;
-    color: #F44336;
+    color: tomato;
 }
 
 ol.classicEnlighterJS li.specialline,
 ul.classicEnlighterJS li.specialline {
     background-color: #5e5cde66;
     border-left-color: #5755d9;
+}
+ol.classicEnlighterJS li, ul.classicEnlighterJS li{
+    border-left-color: #4b49ea87;
 }
 .EnlighterJSWrapper{
     margin-top: 15px;
