@@ -172,9 +172,10 @@ code{
 }
 
 .exp-exp{
-    background: #4b49ea;
+    background: #f9f9f9;
     padding: 5px 20px;
     font-weight: bold;
+    color: #F44336;
 }
 
 ol.classicEnlighterJS li.specialline,

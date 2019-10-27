@@ -12,6 +12,9 @@ function copy(elem) {
 
 // fix body height
 document.body.style.height = window.innerHeight + "px";
+window.onresize = function(){
+	document.body.style.height = window.innerHeight + "px";
+}
 
 // tab-items
 var tab = document.getElementsByClassName('tab-item');
@@ -51,8 +54,6 @@ function cleanSiblings(elem, cls)
 	}
 }
 
-
-
 /**
  * exceptions panel
  */
@@ -73,4 +74,10 @@ for(let i = 0; i< col.length; i++)
 		cleanSiblings(heroBlock, 'show-hero');
 
 	});
+}
+
+// remove ex
+window.onload = function()
+{
+	document.getElementsByClassName('EnlighterJSInfoButton')[0].remove();
 }
