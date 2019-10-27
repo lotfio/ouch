@@ -82,7 +82,7 @@ if (!function_exists('unpackError')) {
         foreach($array as  $key => $value)
         {
         if(isset($value['args']))
-                unset($value['args']); 
+                unset($value['args']);
                 $arr[] = $value;
         }
 
@@ -106,7 +106,7 @@ if (!function_exists('readErrorFile')) {
      * @param int    $line error line
      *
      * @return string
-     * 
+     *
      */
     function readErrorFile($fileName, $errorLine, $escape = TRUE)
     {
@@ -118,15 +118,15 @@ if (!function_exists('readErrorFile')) {
 
         $start = $errorLine >= 6 ? $errorLine - 4 : 1;
         $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
-        
-        for ($i=$start; $i <= $end; $i++) { 
-            $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i] ; 
+
+        for ($i=$start; $i <= $end; $i++) {
+            $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i] ;
         }
         return $output;
     }
 }
 
-if (!function_exists('readErroLine')) {
+if (!function_exists('readErrorLine')) {
     /**
      * read error line function.
      *
@@ -134,13 +134,14 @@ if (!function_exists('readErroLine')) {
      * @param int    $line error line
      *
      * @return string
-     * 
+     *
      */
-    function readErroLine($fileName, $errorLine)
+    function readErrorLine($fileName, $errorLine)
     {
         $file        = file($fileName);
         $file        = array_combine(range(1, count($file)), $file); // change index to 1
-        return trim($file[$errorLine]);
+
+       return isset($file[$errorLine]) ? trim($file[$errorLine]) : "line : $errorLine";
     }
 }
 
@@ -152,7 +153,7 @@ if (!function_exists('readErrorFileConsole')) {
      * @param int    $line error line
      *
      * @return string
-     * 
+     *
      */
     function readErrorFileConsole($fileName, $errorLine, $print)
     {
@@ -165,13 +166,13 @@ if (!function_exists('readErrorFileConsole')) {
         $start = $errorLine >= 6 ? $errorLine - 4 : 1;
         $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
 
-        $lineSpace = strlen($end); // number of charachters in line to determin how much space 
-        
-        for ($i=$start; $i <= $end; $i++) { 
+        $lineSpace = strlen($end); // number of charachters in line to determin how much space
+
+        for ($i=$start; $i <= $end; $i++) {
 
             $output .= '          ' . $start++;
 
-            if($numberOfLines >= 10) 
+            if($numberOfLines >= 10)
                 $output .= str_repeat(' ', $lineSpace - strlen($i) + 1) . '> '; // +1 desired space
 
             if($numberOfLines < 10)
@@ -179,7 +180,7 @@ if (!function_exists('readErrorFileConsole')) {
 
             if($i == $errorLine)
             {
-                
+
                 if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
                     $output .= "\e[3;39;41m" . $file[$i] . "\e[0m";
                 }else{
@@ -187,9 +188,9 @@ if (!function_exists('readErrorFileConsole')) {
                 }
 
             }else{
-                $output .= $file[$i]; 
+                $output .= $file[$i];
             }
-    
+
         }
         return $output;
     }
