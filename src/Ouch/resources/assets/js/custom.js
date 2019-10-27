@@ -75,9 +75,3 @@ for(let i = 0; i< col.length; i++)
 
 	});
 }
-
-// remove ex
-window.onload = function()
-{
-	document.getElementsByClassName('EnlighterJSInfoButton')[0].remove();
-}

@@ -235,7 +235,8 @@
             language : 'php',
             theme : 'classic',
             indent : 2,
-            renderer: 'Inline'
+            renderer: 'Inline',
+            infoButton : false
         });
     </script>
 
