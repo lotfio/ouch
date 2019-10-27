@@ -1,6 +1,6 @@
 body{
     overflow: hidden;
-    background: #eee;
+    background: #e2e2e2;
 }
 code{
     background: transparent;
@@ -52,9 +52,18 @@ a:focus{
 .exp-column{
     direction: rtl;
     background: #f9f9f9;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .exp-panel p{
     margin: 0;
+    border-color: #ddd;
+}
+.badge:not([data-badge])::after, .badge[data-badge]::after{
+    box-shadow: none;
+}
+.error .panel{
+    border: 0;
 }
 .exp-panel p:last-child{
     font-size: 12px;
@@ -168,7 +177,7 @@ code{
     font-weight: bold;
 }
 
-ol.classicEnlighterJS li.specialline, 
+ol.classicEnlighterJS li.specialline,
 ul.classicEnlighterJS li.specialline {
     background-color: #5e5cde66;
     border-left-color: #5755d9;

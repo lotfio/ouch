@@ -71,7 +71,7 @@
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
                     <div class="hero-body">
                         <span class="line"> <?=$ex->file?> <span><?=$ex->line?></span></span>
-                        <pre data-enlighter-language="php" data-enlighter-highlight="<?=$ex->line?>" 
+                        <pre data-enlighter-language="php" data-enlighter-highlight="<?=$ex->line?>"
                         data-enlighter-lineoffset="<?=$ex->line - 4?>"><?=readErrorFile($ex->file, $ex->line)?></pre>
 
                         <!-- debugging helpers -->
@@ -97,7 +97,7 @@
                     <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
                         <div class="hero-body">
                             <span class="line"> <?=$tr['file']?> <span><?=$tr['line']?></span></span>
-                            <pre data-enlighter-language="php" data-enlighter-highlight="<?=$tr['line']?>" 
+                            <pre data-enlighter-language="php" data-enlighter-highlight="<?=$tr['line']?>"
                         data-enlighter-lineoffset="<?=$tr['line'] - 4?>"><?=readErrorFile($tr['file'], $tr['line'])?></pre>
                         </div>
 
@@ -128,10 +128,10 @@
 
         <ul class="tab tab-block" id="tab">
             <li id="tab-1" class="tab-item active">
-                <a href="#"><i class="fa fa-fw fa-globe"></i> Request </a>
+                <a href="#" class="badge" data-badge="<?=count(getallheaders())?>"><i class="fa fa-fw fa-globe"></i> Request </a>
             </li>
             <li id="tab-2" class="tab-item">
-                <a href="#" class="badge" data-badge="5"> <i class="fa fa-fw fa-server"></i> Server  </a>
+                <a href="#" class="badge" data-badge="<?=count($_SERVER)?>"> <i class="fa fa-fw fa-server"></i> Server  </a>
             </li>
             <li id="tab-3" class="tab-item">
                 <a href="#"> <i class="fa fa-fw fa-user"></i> User</a>
@@ -168,6 +168,12 @@
                 <tbody>
                     <?php foreach(getallheaders() as $key => $val): ?>
                         <tr>
+                            <!-- adding tooltip for log keys -->
+                            <?php if(strlen($key) > 15):?>
+                                <td><b class="tooltip" data-tooltip="<?=$key?>"><?=substr($key, 0, 15)?>...</b></td>
+                                <td><span><?=$val?></span></td>
+                            <?php continue; endif;?>
+
                             <td><b><?=$key?></b></td>
                             <td><span><?=$val?></span></td>
                         </tr>
@@ -189,6 +195,11 @@
 
                 <?php foreach($_SERVER as $key => $val): ?>
                     <tr>
+                        <!-- adding tooltip for log keys -->
+                        <?php if(strlen($key) > 15):?>
+                            <td><b class="tooltip" data-tooltip="<?=$key?>"><?=substr($key, 0, 15)?>...</b></td>
+                            <td><span><?=$val?></span></td>
+                        <?php continue; endif;?>
                         <td><b><?=$key?></b></td>
                         <td><span><?=$val?></span></td>
                     </tr>
@@ -218,7 +229,7 @@
     <script>
         <?php include ouch_assets('js/custom.js')?>
     </script>
-    
+
     <script>
         EnlighterJS.Util.Init('pre', null, {
             language : 'php',
@@ -227,6 +238,6 @@
             renderer: 'Inline'
         });
     </script>
-    
+
 </body>
 </html>
