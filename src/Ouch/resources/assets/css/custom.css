@@ -91,7 +91,7 @@ a:focus{
     background: #eee;
 }
 .column, .columns, .container, .row{
-    height: 100%!important;
+    height: 99%!important;
 }
 
 .column{
@@ -188,4 +188,15 @@ ol.classicEnlighterJS li, ul.classicEnlighterJS li{
 }
 .EnlighterJSWrapper{
     margin-top: 15px;
+}
+
+.copy{
+    border: 1px solid white;
+    display: inline-block;
+    border-radius: 16px;
+    line-height: 0.1rem;
+    cursor: pointer;
+    height: 22px;
+    padding: 8px 8px;
+    background: #3a5488;
 }

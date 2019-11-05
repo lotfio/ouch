@@ -18,7 +18,7 @@
 </head>
 <body>
         <div class="container center" >
-            <h2 style="color: #b1b1b1;"> Ouch ! an error occurred. </h2>
+            <h3 class="er" style="color: #b1b1b1;"> <span style="color:#999">Ouch !</span> an error occurred. </h3>
         </div>
 </body>
 </html>

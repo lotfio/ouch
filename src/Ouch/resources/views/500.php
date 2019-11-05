@@ -62,7 +62,7 @@
               <div class="error">
                   <div class="panel mb-10 bg-primary">
                       <div class="panel-body">
-                          <p class="exp-exp"><?=str_last($ex->class)?></p> <p><li><?=$ex->message?></li></p>
+                          <p class="exp-exp"><?=str_last($ex->class)?></p> <p><li><?=$ex->message?> <span class="copy" data-copy="<?=$ex->message?>"  onclick="copy(this)">copy</span></li></p>
                       </div>
                   </div>
               </div>
@@ -144,19 +144,25 @@
             <!-- divider element with text -->
             <div class="divider text-center" data-content="GET"></div>
             <div class="dumper">
-                <?php var_dump($_GET)?>
+               <?php if(empty($_GET)): ?>
+                    <span>No Data !</span>
+                <?php else: print_r($_GET); endif?>
             </div>
 
             <!-- divider element with text -->
             <div class="divider text-center" data-content="POST"></div>
             <div class="dumper">
-                <?php var_dump($_POST)?>
+                <?php if(empty($_SESSION)): ?>
+                    <span>No Data !</span>
+                <?php else: print_r($_SESSION); endif?>
             </div>
 
             <!-- divider element with text -->
             <div class="divider text-center" data-content="COOKIES"></div>
             <div class="dumper">
-                <?php var_dump($_COOKIE)?>
+                <?php if(empty($_COOKIE)): ?>
+                    <span>No Data !</span>
+                <?php else: print_r($_COOKIE); endif?>
             </div>
 
 
