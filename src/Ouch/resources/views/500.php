@@ -34,22 +34,13 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-                <code><?=readErrorLine($ex->file, $ex->line)?></code>
+                <code><?=htmlentities(readErrorLine($ex->file, $ex->line), ENT_QUOTES,'UTF-8')?></code>
                 <p><?=$ex->file?></p>
             </div>
         </div>
 
 
-            <?php $i = 1; foreach($ex->trace as $tr):?>
-                <?php if(array_key_exists("file", $tr)):?>
-                    <div class="panel exp-panel" id="exp-<?=$i?>">
-                        <div class="panel-body">
-                            <code><?=readErrorLine($tr['file'], $tr['line'])?></code>
-                            <p><?=$tr['file']?></p>
-                        </div>
-                    </div>
-                <?php endif;?>
-            <?php $i++; endforeach;?>
+            
 
         </div>
 
@@ -70,9 +61,14 @@
               <!-- editor -->
               <div class="hero hero-sm bg-dark show-hero" id="hero-exp-0">
                     <div class="hero-body">
+
                         <span class="line"> <?=$ex->file?> <span><?=$ex->line?></span></span>
+
                         <pre data-enlighter-language="php" data-enlighter-highlight="<?=$ex->line?>"
-                        data-enlighter-lineoffset="<?=$ex->line - 4?>"><?=readErrorFile($ex->file, $ex->line)?></pre>
+
+                        data-enlighter-lineoffset="<?=$ex->line - 4?>">
+                        <?=readErrorFile($ex->file, $ex->line)?>
+                        </pre>
 
                         <!-- debugging helpers -->
                         <div class="help-links">
@@ -98,7 +94,7 @@
                         <div class="hero-body">
                             <span class="line"> <?=$tr['file']?> <span><?=$tr['line']?></span></span>
                             <pre data-enlighter-language="php" data-enlighter-highlight="<?=$tr['line']?>"
-                        data-enlighter-lineoffset="<?=$tr['line'] - 4?>"><?=readErrorFile($tr['file'], $tr['line'])?></pre>
+                            data-enlighter-lineoffset="<?=$tr['line'] - 4?>"><?=readErrorFile($tr['file'], $tr['line'])?></pre>
                         </div>
 
                          <!-- debugging helpers -->
