@@ -110,9 +110,9 @@ if (!function_exists('readErrorFile')) {
      */
     function readErrorFile($fileName, $errorLine, $escape = TRUE)
     {
-        $output      = "";
-        $file        = file($fileName);
-        $file        = array_combine(range(1, count($file)), $file); // change index to 1
+        $output       = "";
+        $file         = file($fileName);
+        $file         = array_combine(range(1, count($file)), $file); // change index to 1
 
         $numberOfLines  = count($file);
 
@@ -120,8 +120,9 @@ if (!function_exists('readErrorFile')) {
         $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
 
         for ($i=$start; $i <= $end; $i++) {
-            $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i] ;
+            $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i];
         }
+
         return $output;
     }
 }
@@ -170,8 +171,14 @@ if (!function_exists('readErrorFileConsole')) {
 
         for ($i=$start; $i <= $end; $i++) {
 
-            $output .= '          ' . $start++;
+            if($i == $errorLine)
+            {
+                $output .= '       '. "\e[3;39;33m-> \e[0m" . $start++;
 
+            }else{
+                $output .= '          ' . $start++;    
+            }
+            
             if($numberOfLines >= 10)
                 $output .= str_repeat(' ', $lineSpace - strlen($i) + 1) . '> '; // +1 desired space
 
@@ -180,7 +187,6 @@ if (!function_exists('readErrorFileConsole')) {
 
             if($i == $errorLine)
             {
-
                 if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
                     $output .= "\e[3;39;41m" . $file[$i] . "\e[0m";
                 }else{

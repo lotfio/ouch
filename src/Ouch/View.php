@@ -31,6 +31,7 @@ class View
 
         return fwrite(STDOUT, $line);
     }
+    
     /**
      * render view method.
      *
@@ -41,10 +42,7 @@ class View
      */
     public static function render($file, $ex, $env) : void
     {
-        // disable errors
-        ob_start();
-        ob_end_clean();
-
+        ob_get_clean(); // remove html before errors
         if(strtolower($env) === 'pro')
             self::renderProduction();
 
@@ -88,9 +86,11 @@ class View
     }
 
     /**
-     * render production errors
+     * render production
+     *
+     * @return void
      */
-    public static function renderProduction()
+    public static function renderProduction() : void
     {
         if (php_sapi_name() === 'cli')
         {

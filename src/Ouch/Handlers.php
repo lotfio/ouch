@@ -50,7 +50,7 @@ class Handlers implements HandlersInterface
      * @return void throw exception based on the error type
      */
     public function exceptionHandler($e) : void
-    {
+    {   
         $this->setError(
             (int) $e->getCode(),
             (string) $e->getMessage(),

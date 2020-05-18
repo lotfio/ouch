@@ -26,8 +26,9 @@ class Ouch
      */
     public function __construct()
     {
-        ini_set('display_errors', '0'); // prevent error duplication on fatal
-        error_reporting(0); // prevent duplicate on cli
+        ob_start(); // prevent html before error
+        ini_set('display_errors', '0'); // prevent error duplication on fatal & cli
+        error_reporting(0);
         $this->handler = new HandlersSetter(new Handlers());
     }
 
