@@ -77,21 +77,19 @@ if (!function_exists('unpackError')) {
      */
     function unpackError($array)
     {
-        $arr = array();
+        $arr = [];
 
-        foreach($array as  $key => $value)
-        {
-        if(isset($value['args']))
+        foreach ($array as  $key => $value) {
+            if (isset($value['args'])) {
                 unset($value['args']);
-                $arr[] = $value;
+            }
+            $arr[] = $value;
         }
 
-        foreach($arr as $ar)
-        {
+        foreach ($arr as $ar) {
             echo '<li>';
-            foreach($ar as $key => $value)
-            {
-                echo '<b>' . ucfirst($key) . '</b> : '.  ucfirst($value) . "<br>";
+            foreach ($ar as $key => $value) {
+                echo '<b>'.ucfirst($key).'</b> : '.ucfirst($value).'<br>';
             }
             echo '</li>';
         }
@@ -106,20 +104,19 @@ if (!function_exists('readErrorFile')) {
      * @param int    $line error line
      *
      * @return string
-     *
      */
-    function readErrorFile($fileName, $errorLine, $escape = TRUE)
+    function readErrorFile($fileName, $errorLine, $escape = true)
     {
-        $output       = "";
-        $file         = file($fileName);
-        $file         = array_combine(range(1, count($file)), $file); // change index to 1
+        $output = '';
+        $file = file($fileName);
+        $file = array_combine(range(1, count($file)), $file); // change index to 1
 
-        $numberOfLines  = count($file);
+        $numberOfLines = count($file);
 
         $start = $errorLine >= 6 ? $errorLine - 4 : 1;
-        $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
+        $end = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
 
-        for ($i=$start; $i <= $end; $i++) {
+        for ($i = $start; $i <= $end; $i++) {
             $output .= ($escape) ? htmlentities($file[$i], ENT_QUOTES, 'UTF-8') : $file[$i];
         }
 
@@ -135,14 +132,13 @@ if (!function_exists('readErrorLine')) {
      * @param int    $line error line
      *
      * @return string
-     *
      */
     function readErrorLine($fileName, $errorLine)
     {
-        $file        = file($fileName);
-        $file        = array_combine(range(1, count($file)), $file); // change index to 1
+        $file = file($fileName);
+        $file = array_combine(range(1, count($file)), $file); // change index to 1
 
-       return isset($file[$errorLine]) ? trim($file[$errorLine]) : "line : $errorLine";
+        return isset($file[$errorLine]) ? trim($file[$errorLine]) : "line : $errorLine";
     }
 }
 
@@ -154,50 +150,46 @@ if (!function_exists('readErrorFileConsole')) {
      * @param int    $line error line
      *
      * @return string
-     *
      */
     function readErrorFileConsole($fileName, $errorLine, $print)
     {
-        $output      = "";
-        $file        = file($fileName);
-        $file        = array_combine(range(1, count($file)), $file); // change index to 1
+        $output = '';
+        $file = file($fileName);
+        $file = array_combine(range(1, count($file)), $file); // change index to 1
 
-        $numberOfLines  = count($file);
+        $numberOfLines = count($file);
 
         $start = $errorLine >= 6 ? $errorLine - 4 : 1;
-        $end   = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
+        $end = ($errorLine + 4) <= $numberOfLines ? $errorLine + 4 : $numberOfLines;
 
         $lineSpace = strlen($end); // number of charachters in line to determin how much space
 
-        for ($i=$start; $i <= $end; $i++) {
-
-            if($i == $errorLine)
-            {
-                $output .= '       '. "\e[3;39;33m-> \e[0m" . $start++;
-
-            }else{
-                $output .= '          ' . $start++;    
+        for ($i = $start; $i <= $end; $i++) {
+            if ($i == $errorLine) {
+                $output .= '       '."\e[3;39;33m-> \e[0m".$start++;
+            } else {
+                $output .= '          '.$start++;
             }
-            
-            if($numberOfLines >= 10)
-                $output .= str_repeat(' ', $lineSpace - strlen($i) + 1) . '> '; // +1 desired space
 
-            if($numberOfLines < 10)
-                $output .= " > ";
+            if ($numberOfLines >= 10) {
+                $output .= str_repeat(' ', $lineSpace - strlen($i) + 1).'> ';
+            } // +1 desired space
 
-            if($i == $errorLine)
-            {
-                if ((strpos(php_uname("v"), "Windows 7") === FALSE) ) { // if not windows 7
-                    $output .= "\e[3;39;41m" . $file[$i] . "\e[0m";
-                }else{
+            if ($numberOfLines < 10) {
+                $output .= ' > ';
+            }
+
+            if ($i == $errorLine) {
+                if ((strpos(php_uname('v'), 'Windows 7') === false)) { // if not windows 7
+                    $output .= "\e[3;39;41m".$file[$i]."\e[0m";
+                } else {
                     $output .= $file[$i];
                 }
-
-            }else{
+            } else {
                 $output .= $file[$i];
             }
-
         }
+
         return $output;
     }
 }

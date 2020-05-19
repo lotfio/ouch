@@ -34,7 +34,7 @@
 
         <div class="panel exp-panel active" id="exp-0">
             <div class="panel-body">
-                <code><?=htmlentities(readErrorLine($ex->file, $ex->line), ENT_QUOTES,'UTF-8')?></code>
+                <code><?=htmlentities(readErrorLine($ex->file, $ex->line), ENT_QUOTES, 'UTF-8')?></code>
                 <p><?=$ex->file?></p>
             </div>
         </div>
@@ -86,9 +86,9 @@
                     </div>
                 </div>
 
-            <?php $i = 1; foreach($ex->trace as $tr):?>
+            <?php $i = 1; foreach ($ex->trace as $tr) { ?>
 
-                <?php if(array_key_exists("file", $tr)):?>
+                <?php if (array_key_exists('file', $tr)) { ?>
                     <!-- editor -->
                     <div class="hero hero-sm bg-dark" id="hero-exp-<?=$i?>">
                         <div class="hero-body">
@@ -111,8 +111,8 @@
                         </div>
                         <div class="clear-fix"></div>
                     </div>
-                <?php endif;?>
-            <?php $i++; endforeach;?>
+                <?php }?>
+            <?php $i++; }?>
 
               </div>
             </div>
@@ -140,25 +140,31 @@
             <!-- divider element with text -->
             <div class="divider text-center" data-content="GET"></div>
             <div class="dumper">
-               <?php if(empty($_GET)): ?>
+               <?php if (empty($_GET)) { ?>
                     <span>No Data !</span>
-                <?php else: print_r($_GET); endif?>
+                <?php } else {
+    print_r($_GET);
+}?>
             </div>
 
             <!-- divider element with text -->
             <div class="divider text-center" data-content="POST"></div>
             <div class="dumper">
-                <?php if(empty($_SESSION)): ?>
+                <?php if (empty($_SESSION)) { ?>
                     <span>No Data !</span>
-                <?php else: print_r($_SESSION); endif?>
+                <?php } else {
+    print_r($_SESSION);
+}?>
             </div>
 
             <!-- divider element with text -->
             <div class="divider text-center" data-content="COOKIES"></div>
             <div class="dumper">
-                <?php if(empty($_COOKIE)): ?>
+                <?php if (empty($_COOKIE)) { ?>
                     <span>No Data !</span>
-                <?php else: print_r($_COOKIE); endif?>
+                <?php } else {
+    print_r($_COOKIE);
+}?>
             </div>
 
 
@@ -168,18 +174,18 @@
 
             <table class="table table-striped table-hover">
                 <tbody>
-                    <?php foreach(getallheaders() as $key => $val): ?>
+                    <?php foreach (getallheaders() as $key => $val) { ?>
                         <tr>
                             <!-- adding tooltip for log keys -->
-                            <?php if(strlen($key) > 15):?>
+                            <?php if (strlen($key) > 15) { ?>
                                 <td><b class="tooltip" data-tooltip="<?=$key?>"><?=substr($key, 0, 15)?>...</b></td>
                                 <td><span><?=$val?></span></td>
-                            <?php continue; endif;?>
+                            <?php continue; }?>
 
                             <td><b><?=$key?></b></td>
                             <td><span><?=$val?></span></td>
                         </tr>
-                    <?php endforeach?>
+                    <?php }?>
                 </tbody>
             </table>
 
@@ -195,17 +201,17 @@
             <table class="table table-striped table-hover">
                 <tbody>
 
-                <?php foreach($_SERVER as $key => $val): ?>
+                <?php foreach ($_SERVER as $key => $val) { ?>
                     <tr>
                         <!-- adding tooltip for log keys -->
-                        <?php if(strlen($key) > 15):?>
+                        <?php if (strlen($key) > 15) { ?>
                             <td><b class="tooltip" data-tooltip="<?=$key?>"><?=substr($key, 0, 15)?>...</b></td>
                             <td><span><?=$val?></span></td>
-                        <?php continue; endif;?>
+                        <?php continue; }?>
                         <td><b><?=$key?></b></td>
                         <td><span><?=$val?></span></td>
                     </tr>
-                <?php endforeach?>
+                <?php }?>
                 </tbody>
             </table>
 
