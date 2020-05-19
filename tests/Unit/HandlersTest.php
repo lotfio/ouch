@@ -16,7 +16,7 @@ class HandlersTest extends TestCase
     /**
      * setUp method set handlers.
      */
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->handlers = new Handlers();
     }

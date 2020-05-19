@@ -33,12 +33,13 @@ class Ouch
     }
 
     /**
-     * enable ouch error handler
+     * enable ouch error handler.
      *
      * @param string $env pro | dev
+     *
      * @return self
      */
-    public function enableErrorHandler(string $env = 'pro') : self
+    public function enableErrorHandler(string $env = 'pro'): self
     {
         $this->handler->setEnvirenment($env);
         $this->handler->setErrorHandler();
@@ -54,7 +55,7 @@ class Ouch
      *
      * @return void
      */
-    public function disableErrorHandler() :void
+    public function disableErrorHandler(): void
     {
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();

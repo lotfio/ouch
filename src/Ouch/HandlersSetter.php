@@ -32,12 +32,13 @@ class HandlersSetter
     }
 
     /**
-     * set envirenment
+     * set envirenment.
      *
-     * @param string $env  pro | dev
+     * @param string $env pro | dev
+     *
      * @return string
      */
-    public function setEnvirenment(string $env) : string
+    public function setEnvirenment(string $env): string
     {
         return $this->handlers->env = $env;
     }
@@ -47,7 +48,7 @@ class HandlersSetter
      *
      * @return void
      */
-    public function setErrorHandler() : void
+    public function setErrorHandler(): void
     {
         set_error_handler([$this->handlers, 'errorHandler']);
     }
@@ -57,7 +58,7 @@ class HandlersSetter
      *
      * @return void
      */
-    public function setExceptionHandler() : void
+    public function setExceptionHandler(): void
     {
         set_exception_handler([$this->handlers, 'exceptionHandler']);
     }
@@ -67,7 +68,7 @@ class HandlersSetter
      *
      * @return void
      */
-    public function setFatalHandler() : void
+    public function setFatalHandler(): void
     {
         register_shutdown_function([$this->handlers, 'fatalHandler']);
     }
@@ -77,7 +78,7 @@ class HandlersSetter
      *
      * @return void
      */
-    public function restoreErrorHandler() : void
+    public function restoreErrorHandler(): void
     {
         restore_error_handler();
     }
@@ -87,7 +88,7 @@ class HandlersSetter
      *
      * @return void
      */
-    public function restoreExceptionHandler() : void
+    public function restoreExceptionHandler(): void
     {
         restore_exception_handler();
     }
