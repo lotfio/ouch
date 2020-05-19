@@ -10,3 +10,9 @@
  - rename off => disableErrorHandler (makes more sense)
  - adding a better function for read error file
  - adding support for console errors
+
+#0.3.0
+ - fix duplicate html erros
+ - fix duplicate cli errors
+ - new http error interface
+ - adding support for environments (dev, pro)
