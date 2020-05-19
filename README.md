@@ -51,7 +51,7 @@ Thank you for considering to contribute to Ouch. All the contribution guidelines
 Here you can find the [ChangeLog](CHANGELOG.md).
 
 ## Support the development
-- Share **Ouch** and lets get more stars and more contributors.
+Share **Ouch** and lets get more stars and more contributors.
 
 ## License
 
