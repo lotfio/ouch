@@ -16,7 +16,11 @@
 [![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=develop)](https://github.styleci.io/repos/117599927)
 
 ## How it looks like :
-![screenshot capture - 2018-05-25 - 15-54-29](https://user-images.githubusercontent.com/18489496/40551150-1391aad2-6034-11e8-8924-7ef421b76945.png)
+ ### HTTP
+   ![http-error](https://github.com/lotfio/ouch/blob/develop/docs/ouch.png)
+ ### CLI
+   ![cli-error](https://github.com/lotfio/ouch/blob/develop/docs/console.png)
+ 
 ## Features :
 - Simple and easy to use.
 - Transforms all errors to Exceptions.
@@ -24,16 +28,17 @@
 - Catches Fatal Errors.
 - Displays friendly Html errors.
 - Displays friendly console (CLI) errors.
+- Zero errors in prduction.
 
 # Instalation & Use :
-```
+```php
     composer require lotfio/ouch
 ```
 
 ### Use it:
 ```php
     $ouch = new Ouch\Ouch;
-    $ouch->enableErrorHandler();
+    $ouch->enableErrorHandler($env = 'pro'); // for development use $env = 'dev';
 ```
 
 
