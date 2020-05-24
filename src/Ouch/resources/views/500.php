@@ -39,8 +39,17 @@
             </div>
         </div>
 
+        <?php $i = 1; foreach ($ex->trace as $tr) { ?>
 
-            
+        <div class="panel exp-panel" id="exp-<?=$i?>">
+            <div class="panel-body">
+                <code><?=htmlentities(readErrorLine($tr['file'], $tr['line']), ENT_QUOTES, 'UTF-8')?></code>
+                <p><?=$tr['file']?></p>
+            </div>
+        </div>
+
+        <?php $i++; } ?>
+
 
         </div>
 

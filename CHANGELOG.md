@@ -16,3 +16,6 @@
  - fix duplicate cli errors
  - new http error interface
  - adding support for environments (dev, pro)
+
+#0.3.1
+ - fix exceptions trace view
