@@ -10,7 +10,7 @@
 
 ![licence](https://img.shields.io/badge/Licence-MIT-yellow.svg)
 ![language](https://img.shields.io/badge/PHP-7-blue.svg)
-![version](https://img.shields.io/badge/Version-0.3.0-red.svg)
+![version](https://img.shields.io/badge/Version-0.3.1-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-blue.svg)
 ![build](https://travis-ci.org/lotfio/ouch.svg?branch=develop)
 [![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=develop)](https://github.styleci.io/repos/117599927)
