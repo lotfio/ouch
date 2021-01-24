@@ -10,7 +10,9 @@
     ],
 
     "minimum-stability": "dev",
-    
+
+    "prefer-stable": true,
+
     "require": {
         "php": "^7.2"
     },
@@ -25,6 +27,12 @@
         ],
         "psr-4":{
             "Ouch\\":"src/Ouch/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     }
 }
